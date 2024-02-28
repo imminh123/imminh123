@@ -21,7 +21,7 @@ Here are some ideas to get you started:
 - 📝 My little blog [https://cucmofinland.substack.com/](https://cucmofinland.substack.com/)
 - 📄 Know about my experiences [https://www.linkedin.com/in/minh-nguyen-thac](https://www.linkedin.com/in/minh-nguyen-thac)
 
-<h3 align="left">Connect with me:</h3>
+<h3 align="left">I'm only one button away. Let's connect</h3>
 <p align="left">
 <a href="https://linkedin.com/in/minh-nguyen-thac" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="minh-nguyen-thac" height="30" width="40" /></a>
 <a href="https://fb.com/callmeminhisfine" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="callmeminhisfine" height="30" width="40" /></a>
