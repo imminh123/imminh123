@@ -1,5 +1,3 @@
-### Hi there 👋
-
 <!--
 **imminh123/imminh123** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
@@ -15,15 +13,13 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
+<h1 align="center">Hi 👋, I'm Minh Nguyen</h1>
+<h3 align="center">Full-Stack Engineer | Cloud Enthusiast | 🇪🇺 EIT Digital MSc in Cloud and Network Infrastructure | Expert at Cooking Code and Pasta 🍝</h3>
 - 🧑‍💼 Full-Stack Engineer | Cloud Enthusiast
 - 🇪🇺 M.Sc. in Cloud and Network Infrastructure (EIT Digital) at Aalto University 🇫🇮 & KTH Royal Institute of Technology 🇸🇪
 - 💻 Mainly interested in System Architecture, Cloud Computing & Entrepreneurship.
 - 📝 My little blog [https://cucmofinland.substack.com/](https://cucmofinland.substack.com/)
 - 📄 Know about my experiences [https://www.linkedin.com/in/minh-nguyen-thac](https://www.linkedin.com/in/minh-nguyen-thac)
-
-<h1 align="center">Hi 👋, I'm Minh Nguyen</h1>
-<h3 align="center">Full-Stack Engineer | Cloud Enthusiast | 🇪🇺 EIT Digital MSc in Cloud and Network Infrastructure | Expert at Cooking Code and Pasta 🍝</h3>
-
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
