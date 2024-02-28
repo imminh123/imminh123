@@ -23,7 +23,7 @@ Here are some ideas to get you started:
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
 
-<h3 align="left">I'm only one button away. Let's connect 🤭</h3>
+<h3 align="left">I'm just one button away. What are you waiting for? 🤭</h3>
 <p align="left">
 <a href="https://linkedin.com/in/minh-nguyen-thac" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="minh-nguyen-thac" height="30" width="40" /></a>
 <a href="https://fb.com/callmeminhisfine" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="callmeminhisfine" height="30" width="40" /></a>
