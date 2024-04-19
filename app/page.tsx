@@ -253,7 +253,7 @@ export default function Page() {
         {` University`}.
       </p>
 
-      <BackgroundVideo videoUrl="https://d1xyk52624qxh5.cloudfront.net/short_introduction.mp4" />
+      <BackgroundVideo videoUrl="https://d1xyk52624qxh5.cloudfront.net/short_intro_h264.mp4" />
 
       {/* <div className="my-8 columns-2 gap-4 sm:columns-3">
         <div className="relative mb-4 h-40">
