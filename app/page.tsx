@@ -12,8 +12,8 @@ import reactathon from 'public/images/home/reactathon.jpg';
 import ship from 'public/images/home/ship.jpg';
 import filming from 'public/images/home/filming.jpg';
 import meetups from 'public/images/home/meetups.jpg';
-import vercel from 'public/images/home/vercel.jpg';
-import avatar from 'app/avatar.jpg';
+import avatar from 'public/images/home/avatar.png';
+import avatar_github from 'public/images/home/avatar_github.jpg';
 import ViewCounter from 'app/blog/view-counter';
 import { PreloadResources } from 'app/preload';
 import {
@@ -121,19 +121,14 @@ function ChannelLink({ img, link, name }) {
               className="h-16 w-16 rounded-full border border-neutral-200 dark:border-neutral-700"
               priority
             />
-            <div className="relative -right-10 -top-6 inline-flex h-6 w-6 items-center rounded-full border border-neutral-200 bg-white p-1 dark:border-neutral-700">
-              <svg width="15" height="11" role="img" aria-label="YouTube logo">
-                <use href="/sprite.svg#youtube" />
-              </svg>
-            </div>
           </div>
           <div className="flex flex-col">
             <p className="font-medium text-neutral-900 dark:text-neutral-100">
               {name}
             </p>
-            <Suspense fallback={<p className="h-6" />}>
+            {/* <Suspense fallback={<p className="h-6" />}>
               <Subs name={name} />
-            </Suspense>
+            </Suspense> */}
           </div>
         </div>
         <div className="transform text-neutral-700 transition-transform duration-300 group-hover:-rotate-12 dark:text-neutral-300">
@@ -163,7 +158,7 @@ function BlogLink({ slug, name }) {
     <div className="group">
       <a
         href={`https://cucmofinland.substack.com/p/${slug}`}
-        target='_blank'
+        target="_blank"
         className="flex w-full items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800"
       >
         <div className="flex flex-col">
@@ -207,7 +202,7 @@ export default function Page() {
               src={aalto_logo}
               priority
             />
-            Aalto University
+            Aalto
           </Badge>
         </span>
         {` and `}
@@ -221,13 +216,14 @@ export default function Page() {
               src={kth_logo}
               priority
             />
-            KTH University
+            KTH
           </Badge>
         </span>
-        .
+        {` University`}.
       </p>
 
       <BackgroundVideo videoUrl="https://d1xyk52624qxh5.cloudfront.net/short_introduction.mp4" />
+
       {/* <div className="my-8 columns-2 gap-4 sm:columns-3">
         <div className="relative mb-4 h-40">
           <Image
@@ -292,27 +288,29 @@ export default function Page() {
       </div> */}
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          I create educational content for developers, teaching them about web
-          development, JavaScript and TypeScript, React and Next.js, and more.
-          This comes in all forms: blog posts, videos, tweets, conference talks,
-          and workshops. You can watch some of my favorites below.
+          I don't plan to change the world any time soon, simply using the
+          skills I have to solve meaningful, and sometimes beautiful problems.
+          After all, software, to me, is just another tool to solve problems,
+          and I always strive to deliver my work with aesthetic and efficiency.
         </p>
       </div>
       <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
         <ChannelLink
           img={avatar}
-          name="@leerob"
-          link="https://www.youtube.com/@leerob"
+          name="@minhnguyen"
+          link="https://d1xyk52624qxh5.cloudfront.net/Thac Minh Nguyen - Resume_G.pdf"
         />
         <ChannelLink
-          img={vercel}
-          name="@vercel"
-          link="https://www.youtube.com/@vercelhq"
+          img={avatar_github}
+          name="@imminh123"
+          link="https://github.com/imminh123"
         />
       </div>
 
       <div className="social-media-div">
-        <h2 className="mb-8 text-2xl font-medium tracking-tighter">I'm just one message away. Let's connect 🤭</h2>
+        <h2 className="mb-3 text-2xl font-medium tracking-tighter">
+          I'm just one message away. Let's connect 🤭
+        </h2>
         {socialMediaLinks.map((item) => (
           <a
             href={item.link}
@@ -320,16 +318,18 @@ export default function Page() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon size='2x' icon={iconMap(item.type)} />
+            <FontAwesomeIcon size="2x" icon={iconMap(item.type)} />
           </a>
         ))}
       </div>
 
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          Recently, I've written content on my blog and newsletter. Mostly just me with my shower thoughts, contemplating the quirks and mysteries of life.
-          I'm planning on writing about technologies I'm working with in at the time, how I'm learning and growing in my
-          career, sharing knowledge along the way.
+          Recently, I've written content on my blog and newsletter. Mostly just
+          me with my shower thoughts, contemplating the quirks and mysteries of
+          life. I'm planning on writing about technologies I'm working with in
+          at the time, how I'm learning and growing in my career, sharing
+          knowledge along the way.
         </p>
       </div>
       <div className="my-8 flex w-full flex-col space-y-4">
@@ -337,10 +337,16 @@ export default function Page() {
           name="Your boring life is beautiful"
           slug="your-boring-life-is-beautiful"
         />
-        <BlogLink name="Serious is not even enough" slug="serious-is-not-even-enough" />
-        <BlogLink name="I got myself the biggest fan" slug="la-vi-em-o-bay-bi-a" />
+        <BlogLink
+          name="Serious is not even enough"
+          slug="serious-is-not-even-enough"
+        />
+        <BlogLink
+          name="I got myself the biggest fan"
+          slug="la-vi-em-o-bay-bi-a"
+        />
       </div>
-      <div className="prose prose-neutral dark:prose-invert">
+      {/* <div className="prose prose-neutral dark:prose-invert">
         <p>
           I invest small angel checks into early stage startups building tools
           for developers.
@@ -382,22 +388,22 @@ export default function Page() {
             </svg>
           </a>
         </div>
-      </div>
-      <div className="prose prose-neutral dark:prose-invert">
+      </div> */}
+      {/* <div className="prose prose-neutral dark:prose-invert">
         <p>
           I've worked with and advised companies on{' '}
           <Link href="/blog/developer-marketing">developer marketing</Link>,{' '}
           <Link href="/blog/devrel">developer relations</Link>, building
           open-source communities, product-led growth, and more.
         </p>
-      </div>
+      </div> */}
       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
         <li>
           <a
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://twitter.com/leeerob"
+            href="https://www.linkedin.com/in/minh-nguyen-thac"
           >
             <ArrowIcon />
             <p className="ml-2 h-7">follow me</p>
@@ -408,7 +414,7 @@ export default function Page() {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://leerob.substack.com"
+            href="https://cucmofinland.substack.com"
           >
             <ArrowIcon />
             <p className="ml-2 h-7">get email updates</p>
