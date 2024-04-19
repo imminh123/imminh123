@@ -77,7 +77,7 @@ const iconMap = (type: string): IconProp => {
 const BackgroundVideo = ({ videoUrl }) => {
   return (
     <div className="background-video mt-8">
-      <video autoPlay loop muted>
+      <video autoPlay playsInline loop muted>
         <source src={videoUrl} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
@@ -388,14 +388,38 @@ export default function Page() {
             </svg>
           </a>
         </div>
-      </div> */}
-      {/* <div className="prose prose-neutral dark:prose-invert">
+      </div>
+      <div className="prose prose-neutral dark:prose-invert">
         <p>
           I've worked with and advised companies on{' '}
           <Link href="/blog/developer-marketing">developer marketing</Link>,{' '}
           <Link href="/blog/devrel">developer relations</Link>, building
           open-source communities, product-led growth, and more.
         </p>
+
+        <Suspense>
+        <div className="main" id="opensource">
+          <h1 className="project-title">Open Source Projects</h1>
+          <div className="repo-cards-div-main">
+            {repo.map((v, i) => {
+              if (!v) {
+                console.error(
+                  `Github Object for repository number : ${i} is undefined`
+                );
+              }
+              return (
+                <GithubRepoCard repo={v} key={v.node.id} isDark={isDark} />
+              );
+            })}
+          </div>
+          <Button
+            text={"More Projects"}
+            className="project-button"
+            href={socialMediaLinks.github}
+            newTab={true}
+          />
+        </div>
+      </Suspense>
       </div> */}
       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
         <li>

@@ -14,12 +14,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link
 const navItems = {
     '/': {
         name: 'home'
-    },
-    '/work': {
-        name: 'work'
-    },
-    '/blog': {
-        name: 'blog'
     }
 };
 function Navbar() {
