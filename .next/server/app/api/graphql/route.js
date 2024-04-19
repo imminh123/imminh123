@@ -1,0 +1,13 @@
+const CHUNK_PUBLIC_PATH = "server/app/api/graphql/route.js";
+const runtime = require("../../../chunks/[turbopack]_runtime.js");
+runtime.loadChunk("server/chunks/node_modules_next_dist_3ffffe._.js");
+runtime.loadChunk("server/chunks/node_modules_graphql_acfefd._.js");
+runtime.loadChunk("server/chunks/node_modules_@graphql-tools_utils_f205ff._.js");
+runtime.loadChunk("server/chunks/node_modules_@graphql-tools_merge_76e2f0._.js");
+runtime.loadChunk("server/chunks/node_modules_@apollo_server_dist_c3c09a._.js");
+runtime.loadChunk("server/chunks/node_modules_@apollo_usage-reporting-protobuf_generated_cjs_protobuf_0f628d.js");
+runtime.loadChunk("server/chunks/node_modules_tr46_816df9._.js");
+runtime.loadChunk("server/chunks/node_modules_7fdcc3._.js");
+runtime.loadChunk("server/chunks/app_1e4957._.js");
+runtime.loadChunk("server/chunks/node_modules_e8d858._.js");
+module.exports = runtime.getOrInstantiateRuntimeModule("[project]/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/app/api/graphql/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)", CHUNK_PUBLIC_PATH).exports;

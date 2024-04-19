@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 5, "column": 0}, "map": {"version":3,"sources":["/turbopack/[project]/app/blog/[slug]/sandpack.tsx"],"sourcesContent":["'use client';\n\nimport { getSandpackCssText } from '@codesandbox/sandpack-react';\nimport { useServerInsertedHTML } from 'next/navigation';\n\nexport function SandpackCSS() {\n  useServerInsertedHTML(() => {\n    return (\n      <style\n        dangerouslySetInnerHTML={{ __html: getSandpackCssText() }}\n        id=\"sandpack\"\n      />\n    );\n  });\n  return null;\n}\n"],"names":[],"mappings":";;;;;;;AAAA;;;;AAKO,SAAS;IACd,CAAA,GAAA,kIAAA,CAAA,wBAAqB,AAAD,EAAE;QACpB,qBACE,wPAAC;YACC,yBAAyB;gBAAE,QAAQ,CAAA,GAAA,oKAAA,CAAA,qBAAkB,AAAD;YAAI;YACxD,IAAG;;;;;;IAGT;IACA,OAAO;AACT"}},
-    {"offset": {"line": 31, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

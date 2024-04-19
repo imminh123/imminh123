@@ -29,6 +29,10 @@ import {
   faFacebook,
 } from '@fortawesome/free-brands-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { useSuspenseQuery } from '@apollo/experimental-nextjs-app-support/ssr';
+import gql from 'graphql-tag';
+import { RootGithubObject } from './interface/user';
+import { GithubRepoCard } from './components/githubcard';
 
 function Badge(props) {
   return (
@@ -181,8 +185,35 @@ async function Views({ slug }: { slug: string }) {
   let views = await getViewsCount();
   return <ViewCounter allViews={views} slug={slug} />;
 }
+const query = gql`
+  query {
+    user(login: "imminh123") {
+      pinnedItems(first: 6, types: REPOSITORY) {
+        nodes {
+          ... on Repository {
+            name
+            description
+            forkCount
+            stargazers {
+              totalCount
+            }
+            url
+            id
+            diskUsage
+            primaryLanguage {
+              name
+              color
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default function Page() {
+  const { data } = useSuspenseQuery<RootGithubObject>(query);
+
   return (
     <section>
       <PreloadResources />
@@ -298,7 +329,7 @@ export default function Page() {
         <ChannelLink
           img={avatar}
           name="@minhnguyen"
-          link="https://d1xyk52624qxh5.cloudfront.net/Thac Minh Nguyen - Resume_G.pdf"
+          link="https://d1xyk52624qxh5.cloudfront.net/Thac Minh Nguyen - Resume.pdf"
         />
         <ChannelLink
           img={avatar_github}
@@ -421,6 +452,10 @@ export default function Page() {
         </div>
       </Suspense>
       </div> */}
+
+      <section className='grid grid-cols-2 gap-3'>
+      {data && data.user.pinnedItems.nodes.map(item => <GithubRepoCard repo={item} />)}
+      </section>
       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
         <li>
           <a
