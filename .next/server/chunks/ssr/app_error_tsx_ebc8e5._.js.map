@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 5, "column": 0}, "map": {"version":3,"sources":["/turbopack/[project]/app/error.tsx"],"sourcesContent":["'use client';\n\nimport { useEffect } from 'react';\n\nexport default function Error({\n  error,\n  reset,\n}: {\n  error: Error;\n  reset: () => void;\n}) {\n  useEffect(() => {\n    // Log the error to an error reporting service\n    console.error(error);\n  }, [error]);\n\n  return (\n    <div>\n      <p>Oh no, something went wrong... maybe refresh?</p>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;;AAAA;;;AAIe,SAAS,MAAM,EAC5B,KAAK,EACL,KAAK,EAIN;IACC,CAAA,GAAA,+MAAA,CAAA,YAAS,AAAD,EAAE;QACR,8CAA8C;QAC9C,QAAQ,KAAK,CAAC;IAChB,GAAG;QAAC;KAAM;IAEV,qBACE,wPAAC;kBACC,cAAA,wPAAC;sBAAE;;;;;;;;;;;AAGT"}},
+    {"offset": {"line": 35, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

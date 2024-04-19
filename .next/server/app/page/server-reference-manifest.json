@@ -1,0 +1,61 @@
+{
+  "node": {
+    "8f0a957b19a633e38ccb235ab590892e56417cb4": {
+      "workers": {
+        "app/page": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/db/queries.tsx [app-rsc] (ecmascript, action, ecmascript)\" } [app-rsc] (ecmascript)"
+      },
+      "layer": {
+        "app/page": "actionBrowser"
+      }
+    },
+    "2a2e4e9408c9895a944d15ddab0196de4839f2f4": {
+      "workers": {
+        "app/page": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/db/queries.tsx [app-rsc] (ecmascript, action, ecmascript)\" } [app-rsc] (ecmascript)"
+      },
+      "layer": {
+        "app/page": "actionBrowser"
+      }
+    },
+    "88ba9e701a26e50933f07e042a1d9d084c1a182e": {
+      "workers": {
+        "app/page": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/db/queries.tsx [app-rsc] (ecmascript, action, ecmascript)\" } [app-rsc] (ecmascript)"
+      },
+      "layer": {
+        "app/page": "actionBrowser"
+      }
+    },
+    "09f296c9964f25670a5804d2e4bd0cfcd34ae4d5": {
+      "workers": {
+        "app/page": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/db/queries.tsx [app-rsc] (ecmascript, action, ecmascript)\" } [app-rsc] (ecmascript)"
+      },
+      "layer": {
+        "app/page": "actionBrowser"
+      }
+    },
+    "81032f287b1bab800a20536bdf12c31154d79a2f": {
+      "workers": {
+        "app/page": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/db/queries.tsx [app-rsc] (ecmascript, action, ecmascript)\" } [app-rsc] (ecmascript)"
+      },
+      "layer": {
+        "app/page": "actionBrowser"
+      }
+    },
+    "ab28eb9e5362901aab321e99258e9ed55da05ef7": {
+      "workers": {
+        "app/page": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/db/queries.tsx [app-rsc] (ecmascript, action, ecmascript)\" } [app-rsc] (ecmascript)"
+      },
+      "layer": {
+        "app/page": "actionBrowser"
+      }
+    },
+    "bfab398ee914230f4af4ec0de4c275c779eef557": {
+      "workers": {
+        "app/page": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/db/queries.tsx [app-rsc] (ecmascript, action, ecmascript)\" } [app-rsc] (ecmascript)"
+      },
+      "layer": {
+        "app/page": "actionBrowser"
+      }
+    }
+  },
+  "edge": {}
+}
