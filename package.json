@@ -4,8 +4,7 @@
     "dev": "next dev --turbo",
     "build": "npm run setup && next build",
     "build-only": "next build",
-    "start": "next start",
-    "setup": "node ./setup.mjs"
+    "start": "next start"
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "2.12.0",
