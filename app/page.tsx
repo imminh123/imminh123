@@ -2,23 +2,20 @@
 
 import { Suspense } from 'react';
 import { unstable_noStore as noStore } from 'next/cache';
-import Link from 'next/link';
 import Image from 'next/image';
 import aalto_logo from 'public/Aalto_University_logo.png';
 import kth_logo from 'public/kth-logo.png';
-import smashing from 'public/images/home/smashing.jpg';
-import summit from 'public/images/home/summit.jpg';
-import reactathon from 'public/images/home/reactathon.jpg';
-import ship from 'public/images/home/ship.jpg';
-import filming from 'public/images/home/filming.jpg';
-import meetups from 'public/images/home/meetups.jpg';
+import kth from 'public/images/home/kth.jpg';
+import kickoff from 'public/images/home/kickoff.jpg';
+import nokia from 'public/images/home/nokia.jpg';
+import eitkickoff from 'public/images/home/eitkickoff.jpg';
+import startup from 'public/images/home/startup.jpg';
+
 import avatar from 'public/images/home/avatar.png';
 import avatar_github from 'public/images/home/avatar_github.jpg';
 import ViewCounter from 'app/blog/view-counter';
 import { PreloadResources } from 'app/preload';
 import {
-  getLeeYouTubeSubs,
-  getVercelYouTubeSubs,
   getViewsCount,
 } from 'app/db/queries';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -106,7 +103,7 @@ function ArrowIcon() {
   );
 }
 
-function ChannelLink({ img, link, name }) {
+function ChannelLink({ img, link, name, description }) {
   return (
     <div className="group flex w-full">
       <a
@@ -130,9 +127,9 @@ function ChannelLink({ img, link, name }) {
             <p className="font-medium text-neutral-900 dark:text-neutral-100">
               {name}
             </p>
-            {/* <Suspense fallback={<p className="h-6" />}>
-              <Subs name={name} />
-            </Suspense> */}
+            <p className="font-medium text-neutral-900 dark:text-neutral-400">
+              {description}
+            </p>
           </div>
         </div>
         <div className="transform text-neutral-700 transition-transform duration-300 group-hover:-rotate-12 dark:text-neutral-300">
@@ -222,7 +219,7 @@ export default function Page() {
         moi, I'm minh 👋
       </h1>
       <p className="prose prose-neutral dark:prose-invert">
-        {`I'm a full-stack developer, optimist, and a lifelong learner. I currently pursuit a Master in Cloud infrastructure and entrepreneurship at `}
+        {`I'm a software engineer, an optimist, and a lifelong learner. I currently pursuit a Master in Cloud infrastructure and entrepreneurship at `}
         <span className="not-prose">
           <Badge href="https://www.aalto.fi/en">
             <Image
@@ -253,114 +250,47 @@ export default function Page() {
         {` University`}.
       </p>
 
+      <p className="prose prose-neutral dark:prose-invert mt-3">
+        Here, you can know about my work, what I'm currently working on, some
+        shower thoughts and what I've learnt along the software journey.
+      </p>
+
       <BackgroundVideo videoUrl="https://d1xyk52624qxh5.cloudfront.net/short_intro_h264.mp4" />
 
-      {/* <div className="my-8 columns-2 gap-4 sm:columns-3">
-        <div className="relative mb-4 h-40">
-          <Image
-            alt="Me speaking on stage at React Summit about the future of Next.js"
-            src={summit}
-            fill
-            sizes="(max-width: 768px) 213px, 33vw"
-            priority
-            className="rounded-lg object-cover"
-          />
-        </div>
-        <div className="relative mb-4 h-80 sm:mb-0">
-          <Image
-            alt="Me, Lydia, and Delba filming the Next.js Conf keynote"
-            src={filming}
-            fill
-            sizes="(max-width: 768px) 213px, 33vw"
-            priority
-            className="rounded-lg object-cover object-[-16px] sm:object-center"
-          />
-        </div>
-        <div className="relative h-40 sm:mb-4 sm:h-80">
-          <Image
-            alt="Me standing on stage at Reactathon delivering the keynote"
-            src={reactathon}
-            fill
-            sizes="(max-width: 768px) 213px, 33vw"
-            priority
-            className="rounded-lg object-cover object-top sm:object-center"
-          />
-        </div>
-        <div className="relative mb-4 h-40 sm:mb-0">
-          <Image
-            alt="Me standing on stage at SmashingConf giving a talk about my optimism for the web"
-            src={smashing}
-            fill
-            sizes="(max-width: 768px) 213px, 33vw"
-            priority
-            className="rounded-lg object-cover"
-          />
-        </div>
-        <div className="relative mb-4 h-40">
-          <Image
-            alt="Me and Guillermo Rauch on stage for Vercel Ship, answering questions from the Next.js community"
-            src={ship}
-            fill
-            sizes="(max-width: 768px) 213px, 33vw"
-            priority
-            className="rounded-lg object-cover"
-          />
-        </div>
-        <div className="relative h-80">
-          <Image
-            alt="My badge on top of a pile of badges from a Vercel meetup we held"
-            src={meetups}
-            fill
-            sizes="(min-width: 768px) 213px, 33vw"
-            priority
-            className="rounded-lg object-cover"
-          />
-        </div>
-      </div> */}
       <div className="prose prose-neutral dark:prose-invert">
         <p>
           I don't plan to change the world any time soon, simply using the
           skills I have to solve meaningful, and sometimes beautiful problems.
-          After all, software, to me, is just another tool to solve problems,
-          and I always strive to deliver my work with aesthetic and efficiency.
+          After all, software, to me, is just another tool to do it, and I
+          always strive to deliver my work with aesthetic and efficiency.
         </p>
       </div>
       <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
         <ChannelLink
           img={avatar}
           name="@minhnguyen"
+          description={'Resume'}
           link="https://d1xyk52624qxh5.cloudfront.net/Thac Minh Nguyen - Resume.pdf"
         />
         <ChannelLink
           img={avatar_github}
           name="@imminh123"
+          description={'Github'}
           link="https://github.com/imminh123"
         />
-      </div>
-
-      <div className="social-media-div">
-        <h2 className="mb-3 text-2xl font-medium tracking-tighter">
-          I'm just one message away. Let's connect 🤭
-        </h2>
-        {socialMediaLinks.map((item) => (
-          <a
-            href={item.link}
-            className="mr-5"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon size="2x" icon={iconMap(item.type)} />
-          </a>
-        ))}
       </div>
 
       <div className="prose prose-neutral dark:prose-invert">
         <p>
           Recently, I've written content on my blog and newsletter. Mostly just
           me with my shower thoughts, contemplating the quirks and mysteries of
-          life. I'm planning on writing about technologies I'm working with in
-          at the time, how I'm learning and growing in my career, sharing
-          knowledge along the way.
+          life.
+        </p>
+
+        <p>
+          I'm planning on writing about tech that I'm working with at the time,
+          how I'm learning and growing in my career, sharing knowledge along the
+          way.
         </p>
       </div>
       <div className="my-8 flex w-full flex-col space-y-4">
@@ -377,85 +307,95 @@ export default function Page() {
           slug="la-vi-em-o-bay-bi-a"
         />
       </div>
-      {/* <div className="prose prose-neutral dark:prose-invert">
-        <p>
-          I invest small angel checks into early stage startups building tools
-          for developers.
-        </p>
-      </div>
-      <div className="my-8 flex h-14 w-full flex-row space-x-2 overflow-x-auto">
-        <div className="flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800">
-          <a href="https://linear.app">
-            <svg width="78" height="20" role="img" aria-label="Linear logo">
-              <use href="/sprite.svg#linear" />
-            </svg>
-          </a>
-        </div>
-        <div className="flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800">
-          <a href="https://supabase.com">
-            <svg width="100" height="19" role="img" aria-label="Supabase logo">
-              <use href="/sprite.svg#supabase" />
-            </svg>
-          </a>
-        </div>
-        <div className="flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800">
-          <a href="https://www.makeswift.com/blog/makeswift-is-joining-bigcommerce">
-            <svg width="96" height="19" role="img" aria-label="Makeswift logo">
-              <use href="/sprite.svg#makeswift" />
-            </svg>
-          </a>
-        </div>
-        <div className="flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800">
-          <a href="https://resend.com">
-            <svg width="70" height="17" role="img" aria-label="Resend logo">
-              <use href="/sprite.svg#resend" />
-            </svg>
-          </a>
-        </div>
-        <div className="flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800">
-          <a href="https://bun.sh">
-            <svg width="35" height="27" role="img" aria-label="Bun logo">
-              <use href="/sprite.svg#bun" />
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div className="prose prose-neutral dark:prose-invert">
-        <p>
-          I've worked with and advised companies on{' '}
-          <Link href="/blog/developer-marketing">developer marketing</Link>,{' '}
-          <Link href="/blog/devrel">developer relations</Link>, building
-          open-source communities, product-led growth, and more.
-        </p>
 
-        <Suspense>
-        <div className="main" id="opensource">
-          <h1 className="project-title">Open Source Projects</h1>
-          <div className="repo-cards-div-main">
-            {repo.map((v, i) => {
-              if (!v) {
-                console.error(
-                  `Github Object for repository number : ${i} is undefined`
-                );
-              }
-              return (
-                <GithubRepoCard repo={v} key={v.node.id} isDark={isDark} />
-              );
-            })}
-          </div>
-          <Button
-            text={"More Projects"}
-            className="project-button"
-            href={socialMediaLinks.github}
-            newTab={true}
+      <Suspense>
+        <h2 className="text-2xl font-semibold mb-5">Open Source Projects</h2>
+        <section className="grid sm:grid-cols-2 gap-3">
+          {data &&
+            data.user.pinnedItems.nodes.map((item) => (
+              <GithubRepoCard repo={item} />
+            ))}
+        </section>
+      </Suspense>
+
+      <h2 className="mb-3 text-2xl font-medium tracking-tighter mt-8">
+        I'm just one message away. Let's connect 🤭
+      </h2>
+      <div className="flex">
+        {socialMediaLinks.map((item) => (
+          <a
+            href={item.link}
+            className="mr-5"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon size="xl" icon={iconMap(item.type)} />
+          </a>
+        ))}
+      </div>
+
+      <div className="my-8 columns-2 gap-4 sm:columns-3">
+        <div className="relative mb-4 h-40">
+          <Image
+            alt="Me at the EIT Digital kickoff event in Cluj Napoca, Romania"
+            src={kickoff}
+            fill
+            sizes="(max-width: 768px) 213px, 33vw"
+            priority
+            className="rounded-lg object-cover"
           />
         </div>
-      </Suspense>
-      </div> */}
+        <div className="relative mb-4 h-80 sm:mb-0">
+          <video className="h-full w-full rounded-lg object-cover sm:object-center" autoPlay playsInline loop muted>
+            <source
+              src={'https://d1xyk52624qxh5.cloudfront.net/junction_sdg.mp4'}
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div className="relative h-40 sm:mb-4 sm:h-80">
+          <Image
+            alt="Me standing on stage at the EIT Digital kickoff event in Cluj Napoca, Romania"
+            src={eitkickoff}
+            fill
+            sizes="(max-width: 768px) 213px, 33vw"
+            priority
+            className="rounded-lg object-cover object-top sm:object-center"
+          />
+        </div>
+        <div className="relative mb-4 h-40 sm:mb-0">
+          <Image
+            alt="Me at the Nokia HQ in Espoo, Finland"
+            src={nokia}
+            fill
+            sizes="(max-width: 768px) 213px, 33vw"
+            priority
+            className="rounded-lg object-cover"
+          />
+        </div>
+        <div className="relative mb-4 h-40">
+          <Image
+            alt="Me and my team at the booth showcasing our startup on tool rental service for apartment building"
+            src={startup}
+            fill
+            sizes="(max-width: 768px) 213px, 33vw"
+            priority
+            className="rounded-lg object-cover"
+          />
+        </div>
+        <div className="relative h-80">
+          <Image
+            alt="Me at KTH University, Stockholm, Sweden"
+            src={kth}
+            fill
+            sizes="(min-width: 768px) 213px, 33vw"
+            priority
+            className="rounded-lg object-cover"
+          />
+        </div>
+      </div>
 
-      <section className='grid grid-cols-2 gap-3'>
-      {data && data.user.pinnedItems.nodes.map(item => <GithubRepoCard repo={item} />)}
-      </section>
       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
         <li>
           <a

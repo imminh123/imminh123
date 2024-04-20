@@ -8,14 +8,13 @@ export function GithubRepoCard({ repo }) {
   }
 
   return (
-    <div>
       <div
         key={repo.id}
         className="p-3 rounded-md border-gray-400 hover:bg-gray-900 cursor-pointer transition duration-300 ease-out h-36"
         style={{borderWidth: 0.5}}
         onClick={() => openUrlInNewTab(repo.url, repo.name)}
       >
-        <div className="flex">
+        <div className="flex truncate">
           <svg
             aria-hidden="true"
             className="octicon fill-gray-400 mr-2"
@@ -29,8 +28,8 @@ export function GithubRepoCard({ repo }) {
               d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"
             ></path>
           </svg>
-          <p className="whitespace-nowrap overflow-hidden overflow-ellipsis text-blue-500 mb-3 text-md font-bold leading-tight">
-            {repo.name}
+          <p className="truncate text-blue-500 mb-3 text-md font-bold">
+          {repo.name}
           </p>
         </div>
         <p className="text-sm text-gray-400">{repo.description}</p>
@@ -82,6 +81,5 @@ export function GithubRepoCard({ repo }) {
           </div>
         </div>
       </div>
-    </div>
   );
 }
