@@ -15,8 +15,12 @@ export default function BlogPage() {
   return (
     <section>
       <h1 className="font-medium text-2xl mb-8 tracking-tighter">
-        read my blog
+        read my thought on tech
       </h1>
+      <p>
+        More like my shower thoughts on tech, where you'll find my very biased opinions.
+      </p>
+      <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
       {allBlogs
         .sort((a, b) => {
           if (

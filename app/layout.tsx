@@ -9,10 +9,7 @@ import { SandpackCSS } from './blog/[slug]/sandpack';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://marshng.dev'),
-  title: {
-    default: 'Minh Nguyen',
-    template: '%s | Lee Robinson',
-  },
+  title: 'Minh Nguyen',
   description: 'Developer, writer, and lifelong learner.',
   openGraph: {
     title: 'Minh Nguyen',
