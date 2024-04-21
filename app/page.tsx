@@ -30,6 +30,7 @@ import { useSuspenseQuery } from '@apollo/experimental-nextjs-app-support/ssr';
 import gql from 'graphql-tag';
 import { RootGithubObject } from './interface/user';
 import { GithubRepoCard } from './components/githubcard';
+import Link from 'next/link';
 
 function Badge(props) {
   return (
@@ -251,8 +252,8 @@ export default function Page() {
       </p>
 
       <p className="prose prose-neutral dark:prose-invert mt-3">
-        Here, you can know about my work, what I'm currently working on, some
-        shower thoughts and what I've learnt along the software journey.
+        Here, you can know about my <Link href={"/work"}>work</Link>, what I'm currently working on, some
+        <Link href="https://cucmofinland.substack.com"> shower thoughts</Link> and <Link href={"/blog"}>what I've learnt</Link> along the software journey.
       </p>
 
       <BackgroundVideo videoUrl="https://d1xyk52624qxh5.cloudfront.net/short_intro_h264.mp4" />
