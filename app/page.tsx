@@ -15,9 +15,7 @@ import avatar from 'public/images/home/avatar.png';
 import avatar_github from 'public/images/home/avatar_github.jpg';
 import ViewCounter from 'app/blog/view-counter';
 import { PreloadResources } from 'app/preload';
-import {
-  getViewsCount,
-} from 'app/db/queries';
+import { getViewsCount } from 'app/db/queries';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faGithub,
@@ -215,10 +213,11 @@ export default function Page() {
   return (
     <section>
       <PreloadResources />
-
-      <h1 className="mb-8 text-2xl font-medium tracking-tighter">
+      <h1 className="mb-5 text-2xl font-medium tracking-tighter">
         moi, I'm minh 👋
+        <p>🇻🇳 🇫🇮 🇸🇪</p>
       </h1>
+
       <p className="prose prose-neutral dark:prose-invert">
         {`I'm a software engineer, an optimist, and a lifelong learner. I currently pursuit a Master in Cloud infrastructure and entrepreneurship at `}
         <span className="not-prose">
@@ -252,8 +251,14 @@ export default function Page() {
       </p>
 
       <p className="prose prose-neutral dark:prose-invert mt-3">
-        Here, you can know about my <Link href={"/work"}>work</Link>, what I'm currently working on, some
-        <Link href="https://cucmofinland.substack.com"> shower thoughts</Link> and <Link href={"/blog"}>what I've learnt</Link> along the software journey.
+        Here, you can know about my <Link href={'/work'}>work</Link>, what I'm
+        currently working on, some
+        <Link href="https://cucmofinland.substack.com">
+          {' '}
+          shower thoughts
+        </Link>{' '}
+        and <Link href={'/blog'}>what I've learnt</Link> along the software
+        journey.
       </p>
 
       <BackgroundVideo videoUrl="https://d1xyk52624qxh5.cloudfront.net/short_intro_h264.mp4" />
@@ -289,9 +294,9 @@ export default function Page() {
         </p>
 
         <p>
-          I'm planning on writing about tech that I'm working with at the time,
-          how I'm learning and growing in my career, sharing knowledge along the
-          way.
+          You can also find my <Link href={'/blog'}>thoughts on tech here</Link>, where you'll find very
+          biased opinions, how I'm learning and growing in my career, sharing
+          knowledge along the way. 
         </p>
       </div>
       <div className="my-8 flex w-full flex-col space-y-4">
@@ -310,7 +315,7 @@ export default function Page() {
       </div>
 
       <Suspense>
-        <h2 className="text-2xl font-semibold mb-5">Open Source Projects</h2>
+        <h2 className="text-2xl font-semibold mb-5">open source projects</h2>
         <section className="grid sm:grid-cols-2 gap-3">
           {data &&
             data.user.pinnedItems.nodes.map((item) => (
@@ -318,6 +323,19 @@ export default function Page() {
             ))}
         </section>
       </Suspense>
+
+      <h2 className="mb-3 text-2xl font-medium tracking-tighter mt-8">
+        my latest earworm 🎧
+      </h2>
+      <iframe
+        style={{ borderRadius: 12 }}
+        src="https://open.spotify.com/embed/track/67WTwafOMgegV6ABnBQxcE?utm_source=generator"
+        width="100%"
+        height="152"
+        frameBorder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
 
       <h2 className="mb-3 text-2xl font-medium tracking-tighter mt-8">
         I'm just one message away. Let's connect 🤭
@@ -347,7 +365,13 @@ export default function Page() {
           />
         </div>
         <div className="relative mb-4 h-80 sm:mb-0">
-          <video className="h-full w-full rounded-lg object-cover sm:object-center" autoPlay playsInline loop muted>
+          <video
+            className="h-full w-full rounded-lg object-cover sm:object-center"
+            autoPlay
+            playsInline
+            loop
+            muted
+          >
             <source
               src={'https://d1xyk52624qxh5.cloudfront.net/junction_sdg.mp4'}
               type="video/mp4"

@@ -51,7 +51,6 @@ const ContentSecurityPolicy = `
     style-src 'self' 'unsafe-inline';
     connect-src *;
     font-src 'self' data:;
-    frame-src 'self' *.codesandbox.io vercel.live;
 `;
 
 const securityHeaders = [
