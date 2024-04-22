@@ -13,13 +13,12 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-<h1 align="center">Hi there 👋, I'm Minh</h1>
+<h1 align="center">Hi there 👋, [I'm Minh](https://marshng.dev/)</h1>
 
 - 🧑‍💼 Full-Stack Engineer | Cloud Enthusiast
 - 🇪🇺 M.Sc. in Cloud and Network Infrastructure (EIT Digital) at Aalto University 🇫🇮 & KTH Royal Institute of Technology 🇸🇪
-- 💻 Mainly interested in System Architecture, Cloud Computing & Entrepreneurship.
-- 📝 My little blog [https://cucmofinland.substack.com/](https://cucmofinland.substack.com/)
-- 📄 Know about my experiences [https://www.linkedin.com/in/minh-nguyen-thac](https://www.linkedin.com/in/minh-nguyen-thac)
+- 💻 Interested in System Architecture, Cloud Computing & Entrepreneurship.
+- 📄 Get to know me more at [marshng.dev](https://marshng.dev/)
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
 
