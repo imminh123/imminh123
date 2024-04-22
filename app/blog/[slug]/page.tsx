@@ -102,10 +102,10 @@ export default function Blog({ params }) {
             datePublished: post.metadata.publishedAt,
             dateModified: post.metadata.publishedAt,
             description: post.metadata.summary,
-            image: post.metadata.image
-              ? `https://leerob.io${post.metadata.image}`
-              : `https://leerob.io/og?title=${post.metadata.title}`,
-            url: `https://leerob.io/blog/${post.slug}`,
+            // image: post.metadata.image
+            //   ? `https://leerob.io${post.metadata.image}`
+            //   : `https://leerob.io/og?title=${post.metadata.title}`,
+            // url: `https://leerob.io/blog/${post.slug}`,
             author: {
               '@type': 'Person',
               name: 'Minh Nguyen',

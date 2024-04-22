@@ -139,20 +139,6 @@ function ChannelLink({ img, link, name, description }) {
   );
 }
 
-async function Subs({ name }: { name: string }) {
-  noStore();
-  let subscribers;
-  if (name === '@leerob') {
-    // subscribers = await getLeeYouTubeSubs();
-  } else {
-    // subscribers = await getVercelYouTubeSubs();
-  }
-
-  return (
-    <p className="text-neutral-600 dark:text-neutral-400">0 subscribers</p>
-  );
-}
-
 function BlogLink({ slug, name }) {
   return (
     <div className="group">
@@ -209,7 +195,7 @@ const query = gql`
 
 export default function Page() {
   const { data } = useSuspenseQuery<RootGithubObject>(query);
-
+  
   return (
     <section>
       <PreloadResources />
