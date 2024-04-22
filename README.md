@@ -13,7 +13,7 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-<h1 align="center">Hi there 👋, [I'm Minh](https://marshng.dev/)</h1>
+<h1 align="center">Hi there 👋, <a href="https://marshng.dev/">I'm Minh</a></h1>
 
 - 🧑‍💼 Full-Stack Engineer | Cloud Enthusiast
 - 🇪🇺 M.Sc. in Cloud and Network Infrastructure (EIT Digital) at Aalto University 🇫🇮 & KTH Royal Institute of Technology 🇸🇪
