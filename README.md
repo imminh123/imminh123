@@ -23,7 +23,7 @@ Here are some ideas to get you started:
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
 
 <p className="prose prose-neutral dark:prose-invert mt-3">
-  On my website at [marshng.dev](https://marshng.dev/), you can know about my <a href="https://marshng.dev/work">work</a>, what I'm
+  On my website at <a href="https://marshng.dev/">marshng.dev</a>, you can know about my <a href="https://marshng.dev/work">work</a>, what I'm
   currently working on, some
   <a href="https://cucmofinland.substack.com">
     shower thoughts
