@@ -18,11 +18,12 @@ Here are some ideas to get you started:
 - 🧑‍💼 Full-Stack Engineer | Cloud Enthusiast
 - 🇪🇺 M.Sc. in Cloud and Network Infrastructure (EIT Digital) at Aalto University 🇫🇮 & KTH Royal Institute of Technology 🇸🇪
 - 💻 Interested in System Architecture, Cloud Computing & Entrepreneurship.
-- 📄 Get to know me more at [marshng.dev](https://marshng.dev/)
+- 🧑‍💻 Get to know me more at [marshng.dev](https://marshng.dev/)
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
 
-<h3 align="left">I'm just one button away. What are you waiting for? 🤭</h3>
+
+<h3 align="left">I'm just one message away. Let's connect 🤭</h3>
 <p align="left">
 <a href="https://linkedin.com/in/minh-nguyen-thac" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="minh-nguyen-thac" height="30" width="40" /></a>
 <a href="https://fb.com/callmeminhisfine" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="callmeminhisfine" height="30" width="40" /></a>
