@@ -363,7 +363,7 @@ export default function Page() {
             muted
           >
             <source
-              src={'https://d1xyk52624qxh5.cloudfront.net/junction_sdg.mp4'}
+              src={'https://d1xyk52624qxh5.cloudfront.net/junction_sdg_min.mp4'}
               type="video/mp4"
             />
             Your browser does not support the video tag.
