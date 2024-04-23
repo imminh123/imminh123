@@ -195,7 +195,7 @@ const query = gql`
 
 export default function Page() {
   const { data } = useSuspenseQuery<RootGithubObject>(query);
-  
+
   return (
     <section>
       <PreloadResources />
@@ -280,9 +280,9 @@ export default function Page() {
         </p>
 
         <p>
-          You can also find my <Link href={'/blog'}>thoughts on tech here</Link>, where you'll find very
-          biased opinions, how I'm learning and growing in my career, sharing
-          knowledge along the way. 
+          You can also find my <Link href={'/blog'}>thoughts on tech here</Link>
+          , where you'll find very biased opinions, how I'm learning and growing
+          in my career, sharing knowledge along the way.
         </p>
       </div>
       <div className="my-8 flex w-full flex-col space-y-4">
@@ -313,15 +313,18 @@ export default function Page() {
       <h2 className="mb-3 text-2xl font-medium tracking-tighter mt-8">
         my latest earworm 🎧
       </h2>
-      <iframe
-        style={{ borderRadius: 12 }}
-        src="https://open.spotify.com/embed/track/67WTwafOMgegV6ABnBQxcE?utm_source=generator"
-        width="100%"
-        height="152"
-        frameBorder="0"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy"
-      ></iframe>
+
+      <Suspense>
+        <iframe
+          style={{ borderRadius: 12 }}
+          src="https://open.spotify.com/embed/track/67WTwafOMgegV6ABnBQxcE?utm_source=generator"
+          width="100%"
+          height="152"
+          frameBorder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+      </Suspense>
 
       <h2 className="mb-3 text-2xl font-medium tracking-tighter mt-8">
         I'm just one message away. Let's connect 🤭
