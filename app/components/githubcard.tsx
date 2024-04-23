@@ -10,7 +10,7 @@ export function GithubRepoCard({ repo }) {
   return (
       <div
         key={repo.id}
-        className="p-3 rounded-md border-gray-400 hover:bg-gray-900 cursor-pointer transition duration-300 ease-out h-36"
+        className="p-3 rounded-md border-gray-400 text-gray-600 dark:text-gray-400 hover:bg-gray-400 text-red dark:hover:bg-gray-900 cursor-pointer transition duration-300 ease-out h-36"
         style={{borderWidth: 0.5}}
         onClick={() => openUrlInNewTab(repo.url, repo.name)}
       >
@@ -32,11 +32,11 @@ export function GithubRepoCard({ repo }) {
           {repo.name}
           </p>
         </div>
-        <p className="text-sm text-gray-400">{repo.description}</p>
+        <p className="text-sm ">{repo.description}</p>
         <div className="mt-2">
           <div className="repo-left-stat">
             {repo.primaryLanguage !== null && (
-              <div className="flex items-center text-sm text-gray-400">
+              <div className="flex items-center text-sm ">
                 <div
                   className="w-3 h-3 rounded-full mr-1"
                   style={{ backgroundColor: repo.primaryLanguage.color }}

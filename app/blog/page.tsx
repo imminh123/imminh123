@@ -33,12 +33,15 @@ export default function BlogPage() {
         .map((post) => (
           <Link
             key={post.slug}
-            className="flex flex-col space-y-1 mb-4"
+            className="flex flex-col space-y-1 mb-5"
             href={`/blog/${post.slug}`}
           >
             <div className="w-full flex flex-col">
-              <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
+              <p className="text-lg text-neutral-900 dark:text-neutral-100 tracking-tight">
                 {post.metadata.title}
+              </p>
+              <p className="text-neutral-600 dark:text-neutral-400 tracking-tight">
+                {post.metadata.summary}
               </p>
               {/* <Suspense fallback={<p className="h-6" />}>
                 <Views slug={post.slug} />

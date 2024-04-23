@@ -1,0 +1,36 @@
+---
+title: 'A Database Inside Out'
+publishedAt: '2024-04-23'
+summary: 'Technologies advocating the concept of stream everywhere'
+image: '/images/database-inside-out/database-inside-out.png'
+---
+
+The other day I came across [this video](https://www.youtube.com/watch?v=fU9hR3kiOK0&t=2456s&ab_channel=StrangeLoopConference) by Martin Kleppmann, also the author of [Designing Data-Intensive Applications](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/). In it, he introduces the concept of **a database inside out**. Now, I know that phrase might sound fancy, and no, it's not some radical new technology poised to replace our beloved traditional databases. Instead, it's a thought-provoking take on reimagining how we handle data in our applications.
+
+## Data Handling with "Database Inside Out"
+
+Traditionally, when we interact with databases, whether it’s PostgreSQL, MongoDB, or any other type, the complexities of operations like replication are hidden under the hood. This setup lets us treat the database as a single unit—we make requests to a leader node, which then coordinates with follower nodes, and so forth. This is neat because it simplifies our work as developers.
+
+### The Traditional Database Dance
+In a standard scenario, you shoot off a SELECT query to the database. What happens next is mostly invisible: the leader node sends immutable events to its followers, they process these events, and send back the required data. This all takes place behind the scenes, which keeps things simple but also a bit mysterious.
+
+### Martin Kleppmann’s “Inside Out” Idea
+What Martin Kleppmann discussed in his talk is like turning this whole process inside out—literally. He suggests making those immutable events, which are usually hidden away, accessible and manageable by developers. Why? Because this could enable real-time data processing in ways that traditional databases don't easily allow.
+
+<Image
+  alt={`Database inside out`}
+  src={`/images/database-inside-out/database-inside-out.png`}
+  width={2248}
+  height={1590}
+/>
+
+In this flipped model, events could be processed immediately, updating real-time materialized views or triggering other actions as soon as data changes. This is the idea behind tools like [Apache Flink](https://flink.apache.org/), [Spark](https://spark.apache.org/), and [Samza](https://samza.apache.org/) for handling the event streams, enabling having up-to-the-minute data views at your disposal without having to refresh or query your database constantly.
+
+### Perfect Pair for Microservices
+This concept goes nicely with microservice architectures. 
+
+> Technology like Apache Flink or [AWS Kinesis](https://aws.amazon.com/pm/kinesis) is advocating the concept of stream everywhere.
+
+Stream processing inherently supports horizontal scaling, by distributing workloads across multiple nodes, stream processing platforms can enhance the scalability and resilience of microservice.
+
+*You can find my sample projects on handle stream processign with Apache Spark [here](https://github.com/imminh123/streaming-analytics-platforms-kafka-spark), which focus on detailed assumptions and architecture design.*

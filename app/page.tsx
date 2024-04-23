@@ -205,7 +205,7 @@ export default function Page() {
       </h1>
 
       <p className="prose prose-neutral dark:prose-invert">
-        {`I'm a software engineer, an optimist, and a lifelong learner. I currently pursuit a Master in Cloud infrastructure and entrepreneurship at `}
+        {`I'm a software engineer, an optimist, and a lifelong learner. I currently pursuit a Master in Cloud Infrastructure and Entrepreneurship at `}
         <span className="not-prose">
           <Badge href="https://www.aalto.fi/en">
             <Image
@@ -301,7 +301,7 @@ export default function Page() {
       </div>
 
       <Suspense>
-        <h2 className="text-2xl font-semibold mb-5">open source projects</h2>
+        <h2 className="text-2xl font-semibold mb-5">Open source projects</h2>
         <section className="grid sm:grid-cols-2 gap-3">
           {data &&
             data.user.pinnedItems.nodes.map((item) => (
@@ -354,6 +354,7 @@ export default function Page() {
           />
         </div>
         <div className="relative mb-4 h-80 sm:mb-0">
+          <Suspense>
           <video
             className="h-full w-full rounded-lg object-cover sm:object-center"
             autoPlay
@@ -367,6 +368,7 @@ export default function Page() {
             />
             Your browser does not support the video tag.
           </video>
+          </Suspense>
         </div>
         <div className="relative h-40 sm:mb-4 sm:h-80">
           <Image
