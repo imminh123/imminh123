@@ -23,8 +23,8 @@ export async function generateMetadata({
     image,
   } = post.metadata;
   let ogImage = image
-    ? `https://leerob.io${image}`
-    : `https://leerob.io/og?title=${title}`;
+    ? `https://marshng.dev${image}`
+    : `https://marshng.dev/og?title=${title}`;
 
   return {
     title,
@@ -34,7 +34,7 @@ export async function generateMetadata({
       description,
       type: 'article',
       publishedTime,
-      url: `https://leerob.io/blog/${post.slug}`,
+      url: `https://marshng.dev/blog/${post.slug}`,
       images: [
         {
           url: ogImage,
