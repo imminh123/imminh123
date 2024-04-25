@@ -301,7 +301,7 @@ export default function Page() {
       </div>
 
       <Suspense>
-        <h2 className="text-2xl font-semibold mb-5">Open source projects</h2>
+        <h2 className="text-2xl font-semibold mb-5">open source projects</h2>
         <section className="grid sm:grid-cols-2 gap-3">
           {data &&
             data.user.pinnedItems.nodes.map((item) => (
@@ -327,7 +327,7 @@ export default function Page() {
       </Suspense>
 
       <h2 className="mb-3 text-2xl font-medium tracking-tighter mt-8">
-        I'm just one message away. Let's connect 🤭
+        i'm just one message away, let's connect 🤭
       </h2>
       <div className="flex">
         {socialMediaLinks.map((item) => (
