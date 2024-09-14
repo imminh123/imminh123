@@ -197,7 +197,7 @@ export default function Page() {
   const { data } = useSuspenseQuery<RootGithubObject>(query);
 
   return (
-    <section>
+    <section className='max-w-2xl lg:mx-auto'>
       <PreloadResources />
       <h1 className="mb-5 text-2xl font-medium tracking-tighter">
         moi, I'm minh 👋
@@ -304,8 +304,8 @@ export default function Page() {
         <h2 className="text-2xl font-semibold mb-5">open source projects</h2>
         <section className="grid sm:grid-cols-2 gap-3">
           {data &&
-            data.user.pinnedItems.nodes.map((item) => (
-              <GithubRepoCard repo={item} />
+            data.user.pinnedItems.nodes.map((item, index) => (
+              <GithubRepoCard key={index} repo={item} />
             ))}
         </section>
       </Suspense>
@@ -330,8 +330,9 @@ export default function Page() {
         i'm just one message away, let's connect 🤭
       </h2>
       <div className="flex">
-        {socialMediaLinks.map((item) => (
+        {socialMediaLinks.map((item, index) => (
           <a
+            key={index}
             href={item.link}
             className="mr-5"
             target="_blank"

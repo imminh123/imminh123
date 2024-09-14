@@ -27,23 +27,23 @@ const nextConfig = {
       permanent: !!permanent,
     }));
   },
-  headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: securityHeaders,
-      },
-    ];
-  },
-  images: {
-    formats: ["image/avif", "image/webp"],
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "*"
-      },
-    ],
-  },
+  // headers() {
+  //   return [
+  //     {
+  //       source: '/(.*)',
+  //       headers: securityHeaders,
+  //     },
+  //   ];
+  // },
+  // images: {
+  //   formats: ["image/avif", "image/webp"],
+  //   remotePatterns: [
+  //     {
+  //       protocol: "https",
+  //       hostname: "*"
+  //     },
+  //   ],
+  // },
 };
 
 const ContentSecurityPolicy = `
