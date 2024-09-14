@@ -14,13 +14,13 @@ async function fetchMoments() {
 }
 
 const Moments = async () => {
-  // const moments = await fetchMoments();
+  const moments = await fetchMoments();
   return (
     <div className="max-w-full ">
       <h1 className="font-medium text-2xl mb-2 tracking-tighter">Moments</h1>
       <p className='prose prose-neutral dark:prose-invert'>⚠️  Disclaimer: No photography, just memories here!</p>
       <p className='prose prose-neutral dark:prose-invert mt-3 mb-6'>I’ve been lucky enough to gather these priceless moments from around the globe with friends from every corner. If any of these memories resonate with you, let me know! 😉</p>
-      {/* <InstagramFeed media={moments} /> */}
+      <InstagramFeed media={moments} />
     </div>
   );
 };
