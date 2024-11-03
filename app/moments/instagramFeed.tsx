@@ -26,7 +26,7 @@ const InstagramFeed: React.FC<InstagramFeedProps> = ({ media }) => {
 
   return (
     <div className="masonry-grid">
-      {media?.flatMap((post) => (
+      {media?.flatMap((post, postIndex) => (
         post.media_type === 'CAROUSEL_ALBUM' && post.children ? (
           post.children.data.map((child, index) => (
             <div key={`${post.id}-${index}`} className="bento-item">
