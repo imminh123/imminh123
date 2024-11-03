@@ -3,6 +3,7 @@ import axios from 'axios';
 import './instagramFeed.css';
 import { InstagramPost } from '../interface/instagram';
 
+
 async function fetchMoments() {
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
