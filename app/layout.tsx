@@ -6,6 +6,8 @@ import { Navbar } from './components/nav';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { SandpackCSS } from './blog/[slug]/sandpack';
+import Head from 'next/head';
+
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://marshng.dev'),
@@ -49,9 +51,15 @@ export default function RootLayout({
         GeistMono.variable
       )}
     >
-      <head>
+      <Head>
+        <meta property="og:title" content="One Of My Internet Footprint" />
+        <meta property="og:description" content="Developer, writer, and lifelong learner." />
+        <meta property="og:image" content="/Cadentia_4588_72dpi_web.jpg" />
+        <meta property="og:url" content="https://www.marshng.dev" />
         <SandpackCSS />
-      </head>
+        {/* Add other meta tags as needed */}
+      </Head>
+
       <body className="antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto">
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
           <Navbar />
