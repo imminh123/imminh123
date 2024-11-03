@@ -20,6 +20,12 @@ export const metadata: Metadata = {
     siteName: 'Minh Nguyen',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/Cadentia_4588_72dpi_web.jpg',
+        alt: 'Minh Nguyen',
+      },
+    ],
   },
   robots: {
     index: true,
