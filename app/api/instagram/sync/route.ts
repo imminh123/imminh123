@@ -9,9 +9,6 @@ export async function GET() {
     await connectToDatabase();
   
     try {
-      // Delete all the posts
-      await InstagramPostModel.deleteMany({});
-
       const response = await axios.get<{ data: InstagramPost[] }>(
         `https://graph.instagram.com/me/media`,
         {
@@ -22,9 +19,10 @@ export async function GET() {
           },
         }
       );
-
       const posts = response.data.data
       // Save the posts to the database
+      // Delete all the posts
+      await InstagramPostModel.deleteMany({});
       await InstagramPostModel.insertMany(posts);
       return new Response(JSON.stringify({ success: true, data: posts }), { status: 200 });
     } catch (error) {
