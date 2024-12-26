@@ -30,27 +30,26 @@ export default function WorkPage() {
           Software Engineer
         </p>
 
-        <div className="my-3 columns-2">
-         
-          <div className="relative h-40 sm:mb-4 sm:h-80">
+        <div className="my-3 columns-2 gap-2 sm:columns-2">
+          <div className="relative h-40 mb-2 sm:h-80">
             <Image
-              alt="Me standing on stage at the EIT Digital kickoff event in Cluj Napoca, Romania"
+              alt="The whole squad at laser tag"
               src="https://d1xyk52624qxh5.cloudfront.net/IMG_1664.jpg"
               fill
               // sizes="(max-width: 768px) 213px, 33vw"
               className="rounded-lg object-cover object-top sm:object-center"
             />
           </div>
-          <div className="relative mb-4 h-40 sm:mb-0">
+          <div className="relative h-40 w-full mb-1">
             <Image
-              alt="Me at the Nokia HQ in Espoo, Finland"
+              alt="Me at the lunch with the full team"
               src="https://d1xyk52624qxh5.cloudfront.net/IMG_4712 3.jpg"
               fill
               // sizes="(max-width: 768px) 213px, 33vw"
               className="rounded-lg object-cover"
             />
           </div>
-          <div className="relative mb-4 h-40">
+          <div className="relative h-40">
             <Image
               alt="Me with my head bleeding after a serious game of laser tag"
               src="https://d1xyk52624qxh5.cloudfront.net/IMG_1652.jpg"
@@ -70,7 +69,7 @@ export default function WorkPage() {
         </p>
 
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
-        
+
         {/* Sotatek */}
         <h2 className="font-medium text-xl mb-1 tracking-tighter">Sotatek</h2>
         <p className="text-neutral-600 dark:text-neutral-400 text-sm">
