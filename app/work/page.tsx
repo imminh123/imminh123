@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Work',
@@ -23,6 +23,55 @@ export default function WorkPage() {
           work so far.
         </p>
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
+        {/* Cadentia */}
+        <h2 className="font-medium text-xl mb-1 tracking-tighter">Cadentia</h2>
+
+        <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+          Software Engineer
+        </p>
+
+        <div className="my-3 columns-2">
+         
+          <div className="relative h-40 sm:mb-4 sm:h-80">
+            <Image
+              alt="Me standing on stage at the EIT Digital kickoff event in Cluj Napoca, Romania"
+              src="https://d1xyk52624qxh5.cloudfront.net/IMG_1664.jpg"
+              fill
+              // sizes="(max-width: 768px) 213px, 33vw"
+              className="rounded-lg object-cover object-top sm:object-center"
+            />
+          </div>
+          <div className="relative mb-4 h-40 sm:mb-0">
+            <Image
+              alt="Me at the Nokia HQ in Espoo, Finland"
+              src="https://d1xyk52624qxh5.cloudfront.net/IMG_4712 3.jpg"
+              fill
+              // sizes="(max-width: 768px) 213px, 33vw"
+              className="rounded-lg object-cover"
+            />
+          </div>
+          <div className="relative mb-4 h-40">
+            <Image
+              alt="Me with my head bleeding after a serious game of laser tag"
+              src="https://d1xyk52624qxh5.cloudfront.net/IMG_1652.jpg"
+              fill
+              // sizes="(max-width: 768px) 213px, 33vw"
+              className="rounded-lg object-cover"
+              style={{ objectPosition: 'center -30px' }}
+            />
+          </div>
+        </div>
+        <p>
+          Serendipity brought me to these amazing people. 2024 marks the rise of generative AI, and I’m diving into it with Cadentia.
+        </p>
+
+        <p>
+        Feels great to be back in the startup world. I’ll update this once we’ve made some noise!
+        </p>
+
+        <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
+        
+        {/* Sotatek */}
         <h2 className="font-medium text-xl mb-1 tracking-tighter">Sotatek</h2>
         <p className="text-neutral-600 dark:text-neutral-400 text-sm">
           Full-stack Software Engineer, 2020 — 2023
