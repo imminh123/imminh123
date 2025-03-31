@@ -262,7 +262,7 @@ export default function Page() {
           img={avatar}
           name="@minhnguyen"
           description={'Resume'}
-          link="https://d1xyk52624qxh5.cloudfront.net/Thac Minh Nguyen - Resume.pdf"
+          link="https://d1xyk52624qxh5.cloudfront.net/Minh%20Nguyen%20Thac%20-%20Resume%20-%203103March.pdf"
         />
         <ChannelLink
           img={avatar_github}
