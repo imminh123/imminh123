@@ -6,8 +6,9 @@ import { InstagramPost as InstagramPostModel}  from 'app/db/models/instagram';
 const ACCESS_TOKEN = process.env.NEXT_PUBLIC_INSTA_ACCESS_TOKEN;
 
 export async function GET() {
+    return new Response(JSON.stringify({ success: true, error: null }), { status: 200 });
     // await connectToDatabase();
-  
+
     // try {
     //   const response = await axios.get<{ data: InstagramPost[] }>(
     //     `https://graph.instagram.com/me/media`,

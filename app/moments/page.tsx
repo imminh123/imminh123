@@ -7,9 +7,10 @@ import { InstagramPost } from '../interface/instagram';
 async function fetchMoments() {
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
-  const response = await axios.get<{ data: InstagramPost[] }>(
-    `${BASE_URL}/api/instagram`
-  );
+  // const response = await axios.get<{ data: InstagramPost[] }>(
+  //   `${BASE_URL}/api/instagram`
+  // );
+  const response = {data: {data: []}};
 
   return response.data.data;
 }
