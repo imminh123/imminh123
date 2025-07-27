@@ -1,5 +1,4 @@
-// api/webhook.js - Vercel serverless function
-// This file should be placed in /api/webhook.js in your Vercel project
+// pages/api/webhook.js - Next.js Pages Router
 
 export default async function handler(req, res) {
   // Only allow POST requests
@@ -7,9 +6,9 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed. Use POST.' });
   }
 
-  // Add CORS headers for web requests
+  // Add CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   try {
@@ -17,7 +16,6 @@ export default async function handler(req, res) {
     console.log('Request body:', req.body);
     
     // Get GitHub token from environment variable
-    // const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
     const GITHUB_TOKEN = process.env.CADENTIA_GITHUB_TOKEN;
     
     if (!GITHUB_TOKEN) {
@@ -42,7 +40,7 @@ export default async function handler(req, res) {
           ref: 'betaops',
           inputs: {
             branch_name: 'hieu-agentic-atomic-agent-integration-fix',
-            trigger_source: 'shelly_button_via_vercel',
+            trigger_source: 'shelly_button_via_nextjs',
             timestamp: new Date().toISOString(),
             webhook_data: JSON.stringify(req.body)
           }
