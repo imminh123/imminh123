@@ -1,28 +1,32 @@
-// pages/api/webhook.js - Next.js Pages Router
+// app/api/webhook/route.js - Next.js App Router
 
-export default async function handler(req, res) {
-  // Only allow GET requests
-  if (req.method !== 'GET') {
-    return res.status(405).json({ error: 'Method not allowed. Use GET.' });
-  }
+import { NextResponse } from 'next/server';
 
-  // Add CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+export async function GET(request) {
+  // CORS headers
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
 
   try {
     console.log('Received GET webhook from Shelly button');
-    console.log('Query parameters:', req.query);
+    
+    // Get query parameters from the URL
+    const { searchParams } = new URL(request.url);
+    const queryParams = Object.fromEntries(searchParams);
+    console.log('Query parameters:', queryParams);
     
     // Get GitHub token from environment variable
     const GITHUB_TOKEN = process.env.CADENTIA_GITHUB_TOKEN;
     
     if (!GITHUB_TOKEN) {
       console.error('GITHUB_TOKEN environment variable not set');
-      return res.status(500).json({ 
-        error: 'Server configuration error' 
-      });
+      return NextResponse.json(
+        { error: 'Server configuration error' },
+        { status: 500, headers }
+      );
     }
     
     // GitHub API call
@@ -39,10 +43,7 @@ export default async function handler(req, res) {
         body: JSON.stringify({
           ref: 'betaops',
           inputs: {
-            branch_name: 'hieu-agentic-atomic-agent-integration-fix',
-            trigger_source: 'shelly_button_via_nextjs_get',
-            timestamp: new Date().toISOString(),
-            trigger_params: JSON.stringify(req.query)
+            branch_name: 'hieu-agentic-atomic-agent-integration-fix'
           }
         })
       }
@@ -50,27 +51,48 @@ export default async function handler(req, res) {
 
     if (githubResponse.ok || githubResponse.status === 204) {
       console.log('GitHub workflow triggered successfully');
-      return res.status(200).json({ 
-        success: true, 
-        message: 'GitHub workflow triggered successfully',
-        timestamp: new Date().toISOString(),
-        params: req.query
-      });
+      return NextResponse.json(
+        { 
+          success: true, 
+          message: 'GitHub workflow triggered successfully',
+          timestamp: new Date().toISOString(),
+          params: queryParams
+        },
+        { status: 200, headers }
+      );
     } else {
       const errorText = await githubResponse.text();
       console.error('GitHub API error:', githubResponse.status, errorText);
-      return res.status(500).json({ 
-        error: 'Failed to trigger GitHub workflow',
-        status: githubResponse.status,
-        details: errorText
-      });
+      return NextResponse.json(
+        { 
+          error: 'Failed to trigger GitHub workflow',
+          status: githubResponse.status,
+          details: errorText
+        },
+        { status: 500, headers }
+      );
     }
 
   } catch (error) {
     console.error('Error in webhook handler:', error);
-    return res.status(500).json({ 
-      error: 'Internal server error',
-      details: error.message
-    });
+    return NextResponse.json(
+      { 
+        error: 'Internal server error',
+        details: error.message
+      },
+      { status: 500, headers }
+    );
   }
+}
+
+// Handle OPTIONS requests for CORS preflight
+export async function OPTIONS() {
+  return new Response(null, {
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    },
+  });
 }
