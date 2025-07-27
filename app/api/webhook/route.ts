@@ -1,19 +1,19 @@
 // pages/api/webhook.js - Next.js Pages Router
 
 export default async function handler(req, res) {
-  // Only allow POST requests
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed. Use POST.' });
+  // Only allow GET requests
+  if (req.method !== 'GET') {
+    return res.status(405).json({ error: 'Method not allowed. Use GET.' });
   }
 
   // Add CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   try {
-    console.log('Received webhook from Shelly button');
-    console.log('Request body:', req.body);
+    console.log('Received GET webhook from Shelly button');
+    console.log('Query parameters:', req.query);
     
     // Get GitHub token from environment variable
     const GITHUB_TOKEN = process.env.CADENTIA_GITHUB_TOKEN;
@@ -40,9 +40,9 @@ export default async function handler(req, res) {
           ref: 'betaops',
           inputs: {
             branch_name: 'hieu-agentic-atomic-agent-integration-fix',
-            trigger_source: 'shelly_button_via_nextjs',
+            trigger_source: 'shelly_button_via_nextjs_get',
             timestamp: new Date().toISOString(),
-            webhook_data: JSON.stringify(req.body)
+            trigger_params: JSON.stringify(req.query)
           }
         })
       }
@@ -53,7 +53,8 @@ export default async function handler(req, res) {
       return res.status(200).json({ 
         success: true, 
         message: 'GitHub workflow triggered successfully',
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        params: req.query
       });
     } else {
       const errorText = await githubResponse.text();
