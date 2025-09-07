@@ -276,10 +276,10 @@ export default function Page() {
       <div className="prose prose-neutral dark:prose-invert">
         <p>
           Recently, I've found running to be a great way to clear my mind. I
-          think of it as meditation on feet. You can follow my running journey
-          here where I share my progress, experiences, and the upcoming
-          races I've signed up for, hopefully it can inspire you to start
-          running too!
+          think of it as meditation on feet. You can follow{' '}
+          <Link href="/running">my running journey here</Link> where I share my
+          progress, experiences, and the upcoming races I've signed up for,
+          hopefully it can inspire you to start running too!
         </p>
 
         <p>
