@@ -85,6 +85,7 @@ export default function RunningPage() {
                 <div className="relative w-36 h-36 flex-shrink-0">
                   <Image
                     src={selectedRun.avatar}
+                    alt='Run Highlight'
                     fill
                     className="rounded-full object-cover"
                   />
