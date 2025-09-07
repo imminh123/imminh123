@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import ImageList from '../components/ImageList';
 
 export const metadata: Metadata = {
   title: 'Work',
@@ -12,6 +13,44 @@ async function Stars() {
   let count = Math.round(json.stargazers_count / 1000);
   return `${count}k stars`;
 }
+
+const imageData = {
+  cadentia: [{
+      url: "https://d1xyk52624qxh5.cloudfront.net/IMG_1664.jpg",
+      alt: "The whole squad at laser tag",
+    },
+    {
+      url: "https://d1xyk52624qxh5.cloudfront.net/IMG_4712 3.jpg",
+      alt: "Me at the lunch with the full team"
+    },
+    {
+      url: "https://d1xyk52624qxh5.cloudfront.net/IMG_1652.jpg",
+      alt: "Me with my head bleeding after a serious game of laser tag",
+      objectPosition: "center -30px"
+    }],
+  sotatek: [
+    {
+      url: "https://d1xyk52624qxh5.cloudfront.net/sota_year_end_3.JPEG",
+      alt: "The whole squad at laser tag",
+      height: "h-80" as const,
+      objectPosition: "top"
+    },
+    {
+      url: "https://d1xyk52624qxh5.cloudfront.net/sota_year_end.JPG",
+      alt: "Me at the lunch with the full team"
+    },
+    {
+      url: "https://d1xyk52624qxh5.cloudfront.net/sota_5.JPG",
+      alt: "Me with my head bleeding after a serious game of laser tag",
+      objectPosition: "center -30px"
+    },
+    {
+      url: "https://d1xyk52624qxh5.cloudfront.net/sotatek_1.JPG",
+      alt: "Me with my head bleeding after a serious game of laser tag",
+      objectPosition: "center -30px"
+    }
+  ]
+};
 
 export default function WorkPage() {
   return (
@@ -40,6 +79,22 @@ export default function WorkPage() {
               className="rounded-lg object-cover object-top sm:object-center"
             />
           </div>
+           <div className="relative h-40 mb-2 sm:h-80 break-inside-avoid">
+            <Image
+              alt="The whole squad at laser tag"
+              src="https://d1xyk52624qxh5.cloudfront.net/Works/saxdor_2.jpg"
+              fill
+              className="rounded-lg object-cover object-top sm:object-center"
+            />
+          </div>
+          <div className="relative h-40 mb-2 sm:h-80 break-inside-avoid">
+            <Image
+              alt="The whole squad at laser tag"
+              src="https://d1xyk52624qxh5.cloudfront.net/Works/saxdor_1.jpg"
+              fill
+              className="rounded-lg object-cover object-top sm:object-center"
+            />
+          </div>
           <div className="relative h-40 w-full mb-1">
             <Image
               alt="Me at the lunch with the full team"
@@ -61,11 +116,13 @@ export default function WorkPage() {
           </div>
         </div>
         <p>
-          Serendipity brought me to these amazing people. 2024 marks the rise of generative AI, and I’m diving into it with Cadentia.
+          Serendipity brought me to these amazing people. 2024 marks the rise of
+          generative AI, and I’m diving into it with Cadentia.
         </p>
 
         <p>
-        Feels great to be back in the startup world. I’ll update this once we’ve made some noise!
+          Feels great to be back in the startup world. I’ll update this once
+          we’ve made some noise!
         </p>
 
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
@@ -75,6 +132,43 @@ export default function WorkPage() {
         <p className="text-neutral-600 dark:text-neutral-400 text-sm">
           Full-stack Software Engineer, 2020 — 2023
         </p>
+        <div className="my-3 columns-3 gap-2 sm:columns-2">
+          <div className="relative h-40 mb-2 sm:h-80 break-inside-avoid">
+            <Image
+              alt="The whole squad at laser tag"
+              src="https://d1xyk52624qxh5.cloudfront.net/sota_year_end_3.JPEG"
+              fill
+              className="rounded-lg object-cover object-top sm:object-center"
+            />
+          </div>
+          <div className="relative h-40 break-inside-avoid">
+            <Image
+              alt="Me with my head bleeding after a serious game of laser tag"
+              src="https://d1xyk52624qxh5.cloudfront.net/sota_5.JPG"
+              fill
+              className="rounded-lg object-cover"
+              style={{ objectPosition: 'center -30px' }}
+            />
+          </div>
+          <div className="relative h-40 break-inside-avoid">
+            <Image
+              alt="Me with my head bleeding after a serious game of laser tag"
+              src="https://d1xyk52624qxh5.cloudfront.net/sotatek_1.JPG"
+              fill
+              // sizes="(max-width: 768px) 213px, 33vw"
+              className="rounded-lg object-cover"
+            />
+          </div>
+        </div>
+         <div className="relative h-40 w-full mb-1">
+            <Image
+              alt="Me at the lunch with the full team"
+              src="https://d1xyk52624qxh5.cloudfront.net/sota_year_end.JPG"
+              fill
+              // sizes="(max-width: 768px) 213px, 33vw"
+              className="rounded-lg object-cover"
+            />
+          </div>
         <p>
           During my time at <a href="https://www.sotatek.com/">Sotatek</a>, a
           Global SDaaS & IT Consulting company, I had the opportunity to work

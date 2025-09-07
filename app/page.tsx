@@ -197,7 +197,7 @@ export default function Page() {
   const { data } = useSuspenseQuery<RootGithubObject>(query);
 
   return (
-    <section className='max-w-2xl lg:mx-auto'>
+    <section className="max-w-2xl lg:mx-auto">
       <PreloadResources />
       <h1 className="mb-5 text-2xl font-medium tracking-tighter">
         moi, I'm minh 👋
@@ -257,6 +257,7 @@ export default function Page() {
           always strive to deliver my work with aesthetic and efficiency.
         </p>
       </div>
+
       <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
         <ChannelLink
           img={avatar}
@@ -274,9 +275,17 @@ export default function Page() {
 
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          Recently, I've written content on my blog and newsletter. Mostly just
-          me with my shower thoughts, contemplating the quirks and mysteries of
-          life.
+          Recently, I've found running to be a great way to clear my mind. I
+          think of it as meditation on feet. You can follow my running journey
+          here where I share my progress, experiences, and the upcoming
+          races I've signed up for, hopefully it can inspire you to start
+          running too!
+        </p>
+
+        <p>
+          I have a blog here, even though I've been super lazy putting out
+          content. Mostly just me with my shower thoughts, nothing technical,
+          just contemplating on life.
         </p>
 
         <p>
@@ -356,19 +365,21 @@ export default function Page() {
         </div>
         <div className="relative mb-4 h-80 sm:mb-0">
           <Suspense>
-          <video
-            className="h-full w-full rounded-lg object-cover sm:object-center"
-            autoPlay
-            playsInline
-            loop
-            muted
-          >
-            <source
-              src={'https://d1xyk52624qxh5.cloudfront.net/junction_sdg_min.mp4'}
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
+            <video
+              className="h-full w-full rounded-lg object-cover sm:object-center"
+              autoPlay
+              playsInline
+              loop
+              muted
+            >
+              <source
+                src={
+                  'https://d1xyk52624qxh5.cloudfront.net/junction_sdg_min.mp4'
+                }
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
           </Suspense>
         </div>
         <div className="relative h-40 sm:mb-4 sm:h-80">

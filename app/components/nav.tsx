@@ -12,6 +12,9 @@ const navItems = {
   },
   '/blog': {
     name: 'thought',
+  },
+  '/running': {
+    name: 'running',
   }
 };
 
