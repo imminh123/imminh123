@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const navItems = {
   '/': {
@@ -15,10 +18,21 @@ const navItems = {
   },
   '/running': {
     name: 'running',
-  }
+  },
+  '/weregettingmarried': {
+    name: "we're getting married",
+  },
 };
 
+const hiddenOnRoutes = ['/weregettingmarried'];
+
 export function Navbar() {
+  const pathname = usePathname();
+
+  if (hiddenOnRoutes.includes(pathname)) {
+    return null;
+  }
+
   return (
     <aside className="-ml-[8px] mb-16 tracking-tight">
       <div className="lg:sticky lg:top-20 ">
