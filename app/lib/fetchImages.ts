@@ -43,3 +43,37 @@ export async function fetchImageUrls(): Promise<Record<string, string[]>> {
 
   return groupedSorted;
 }
+
+export async function fetchWeddingImages(): Promise<string[]> {
+  const Bucket = 'wedding-media-invitation';
+  const data = await s3.listObjectsV2({ Bucket }).promise();
+
+  const images: { url: string; lastModified: Date }[] = [];
+
+  data.Contents?.forEach((item) => {
+    const key = item.Key || '';
+    const size = item.Size || 0;
+    const lastModified = item.LastModified;
+
+    // Skip empty files, folders, and non-image files
+    if (size === 0 || !lastModified) return;
+
+    // Only include common image formats
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.heic'];
+    const hasImageExtension = imageExtensions.some(ext =>
+      key.toLowerCase().endsWith(ext)
+    );
+
+    if (!hasImageExtension) return;
+
+    images.push({
+      url: `https://d12g7i3vymjmyt.cloudfront.net/${key}`,
+      lastModified,
+    });
+  });
+
+  // Sort by last modified (newest first)
+  images.sort((a, b) => b.lastModified.getTime() - a.lastModified.getTime());
+
+  return images.map((img) => img.url);
+}

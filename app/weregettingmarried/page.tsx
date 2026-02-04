@@ -1,241 +1,199 @@
-'use client';
-
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { fetchWeddingImages } from '../lib/fetchImages';
+import { PersonalizedGreeting } from '../components/PersonalizedGreeting';
+import './wedding.css';
 
-const photos = [
-  { src: '/images/home/filming.jpg', alt: 'Together', rotate: '-3deg', delay: 0.3 },
-  { src: '/images/home/kth.jpg', alt: 'Adventures', rotate: '2deg', delay: 0.5 },
-  { src: '/images/home/summit.jpg', alt: 'Moments', rotate: '-1.5deg', delay: 0.7 },
-  { src: '/images/home/meetups.jpg', alt: 'Memories', rotate: '3deg', delay: 0.9 },
-  { src: '/images/home/ship.jpg', alt: 'Journey', rotate: '-2deg', delay: 1.1 },
-  { src: '/images/home/startup.jpg', alt: 'Us', rotate: '1.5deg', delay: 1.3 },
-];
+const rotations = ['-3deg', '2deg', '-1.5deg', '3deg', '-2deg', '1.5deg'];
 
-export default function WereGettingMarried() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+export default async function WereGettingMarried() {
+  const weddingImages = await fetchWeddingImages();
 
   return (
-    <>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+    <section className="wedding-page -mx-2 md:mx-0">
+      {/* Background Video */}
+      <video className="hero-video-bg" autoPlay loop muted playsInline>
+        <source
+          src="https://d12g7i3vymjmyt.cloudfront.net/videos/copy_DC7AD864-2836-4B22-A484-AB0AE34346CE.MOV"
+          type="video/mp4"
+        />
+      </video>
 
-        @keyframes wedding-fade-up {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes wedding-breathe {
-          0%, 100% {
-            opacity: 0.4;
-          }
-          50% {
-            opacity: 1;
-          }
-        }
-
-        @keyframes wedding-line-grow {
-          from {
-            transform: scaleX(0);
-          }
-          to {
-            transform: scaleX(1);
-          }
-        }
-
-        @keyframes wedding-photo-reveal {
-          from {
-            opacity: 0;
-            transform: scale(0.92) translateY(20px);
-            filter: blur(4px);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-            filter: blur(0px);
-          }
-        }
-
-        @keyframes wedding-float {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-6px);
-          }
-        }
-
-        @keyframes wedding-dot-pulse {
-          0%, 80%, 100% {
-            opacity: 0.2;
-            transform: scale(0.8);
-          }
-          40% {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-
-        .wedding-page {
-          font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-        }
-
-        .wedding-fade-up {
-          animation: wedding-fade-up 1s ease-out forwards;
-          opacity: 0;
-        }
-
-        .wedding-breathe {
-          animation: wedding-breathe 4s ease-in-out infinite;
-        }
-
-        .wedding-line {
-          animation: wedding-line-grow 1.2s ease-out forwards;
-          animation-delay: 0.6s;
-          transform: scaleX(0);
-        }
-
-        .wedding-photo {
-          animation: wedding-photo-reveal 0.8s ease-out forwards;
-          opacity: 0;
-        }
-
-        .wedding-float {
-          animation: wedding-float 5s ease-in-out infinite;
-        }
-
-        .wedding-dot {
-          animation: wedding-dot-pulse 1.8s ease-in-out infinite;
-        }
-      `}</style>
-
-      <section className="wedding-page -mx-2 md:mx-0">
-        {/* Hero Section */}
+      {/* Hero Section */}
+      <div
+        className="wedding-fade-up text-center pt-8 pb-12 relative"
+        style={{ animationDelay: '0.1s' }}
+      >
+        {/* Decorative top flourish */}
         <div
-          className="wedding-fade-up text-center pt-8 pb-12"
-          style={{ animationDelay: '0.1s' }}
+          className="wedding-breathe text-neutral-300 dark:text-neutral-700 text-2xl tracking-[0.5em] mb-8"
+          style={{ fontVariantLigatures: 'common-ligatures' }}
         >
-          {/* Decorative top flourish */}
-          <div
-            className="wedding-breathe text-neutral-300 dark:text-neutral-700 text-2xl tracking-[0.5em] mb-8"
-            style={{ fontVariantLigatures: 'common-ligatures' }}
-          >
-            ~ ~ ~
-          </div>
+          ~ ~ ~
+        </div>
 
-          <p
+        <PersonalizedGreeting />
+
+        {/* <p
             className="wedding-fade-up text-xs uppercase tracking-[0.4em] text-neutral-400 dark:text-neutral-500 mb-6"
             style={{ animationDelay: '0.3s', fontFamily: 'var(--font-geist-sans), sans-serif' }}
           >
             Something beautiful is coming
-          </p>
+          </p> */}
 
-          <h1
-            className="wedding-fade-up text-4xl md:text-5xl font-semibold tracking-tight leading-tight mb-4"
-            style={{ animationDelay: '0.5s' }}
-          >
-            We&rsquo;re Getting
-            <br />
-            <em className="font-normal">Married</em>
-          </h1>
+        <h1
+          className="wedding-fade-up text-4xl md:text-5xl font-semibold tracking-tight leading-tight mb-4"
+          style={{ animationDelay: '0.5s' }}
+        >
+          We&rsquo;re Getting
+          <br />
+          <em className="font-normal">Married</em>
+        </h1>
 
-          {/* Decorative line */}
-          <div className="flex justify-center my-8">
-            <div
-              className="wedding-line h-px w-24 bg-neutral-300 dark:bg-neutral-700"
-            />
-          </div>
-
-          <p
-            className="wedding-fade-up text-sm text-neutral-500 dark:text-neutral-400 max-w-xs mx-auto leading-relaxed"
-            style={{ animationDelay: '0.8s', fontFamily: 'var(--font-geist-sans), sans-serif' }}
-          >
-            We can&rsquo;t wait to share this chapter with you.
-            <br />
-            Details are on their way.
-          </p>
+        {/* Decorative line */}
+        <div className="flex justify-center my-8">
+          <div className="wedding-line h-px w-24 bg-neutral-300 dark:bg-neutral-700" />
         </div>
 
-        {/* Photo Collage */}
-        {!mounted && (
-          <div className="py-8">
-            <p
-              className="wedding-fade-up text-center text-xs uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500 mb-8"
-              style={{ animationDelay: '1s', fontFamily: 'var(--font-geist-sans), sans-serif' }}
-            >
-              Our Story So Far
-            </p>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 px-2">
-              {photos.map((photo, i) => (
-                <div
-                  key={photo.src}
-                  className="wedding-photo wedding-float relative aspect-[4/5] overflow-hidden rounded-sm bg-neutral-100 dark:bg-neutral-900"
-                  style={{
-                    animationDelay: `${photo.delay}s`,
-                    animationFillMode: 'forwards',
-                    // Float at different speeds for organic feel
-                    animationDuration: `${4.5 + i * 0.7}s`,
-                    rotate: photo.rotate,
-                  }}
-                >
-                  <Image
-                    src={photo.src}
-                    alt={photo.alt}
-                    fill
-                    className="object-cover transition-transform duration-700 hover:scale-105"
-                    sizes="(max-width: 768px) 50vw, 33vw"
-                  />
-                  {/* Subtle overlay on hover */}
-                  <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-500" />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Bottom section */}
-        <div
-          className="wedding-fade-up text-center py-16"
-          style={{ animationDelay: '1.6s' }}
+        <p
+          className="wedding-fade-up text-sm text-neutral-500 dark:text-neutral-400 max-w-xs mx-auto leading-relaxed"
+          style={{
+            animationDelay: '0.8s',
+            fontFamily: 'var(--font-geist-sans), sans-serif',
+          }}
         >
-          {/* <div className="flex justify-center items-center gap-3 mb-8">
+          Having you with us on this special day is our greatest gift.
+          <br />
+        </p>
+
+        {/* Save the Date */}
+        <div className="mt-12">
+          <p
+            className="text-sm uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500 mb-4"
+            style={{ fontFamily: 'var(--font-geist-sans), sans-serif' }}
+          >
+            Save the Date
+          </p>
+          <p className="text-2xl md:text-3xl font-semibold mb-2">
+            Friday, March 6, 2026
+          </p>
+          <p className="text-lg text-neutral-600 dark:text-neutral-400">
+            6:00 PM
+          </p>
+        </div>
+      </div>
+
+      {/* Photo Collage */}
+      <div className="py-8">
+        <p
+          className="wedding-fade-up text-center text-xs uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500 mb-8"
+          style={{
+            animationDelay: '1s',
+            fontFamily: 'var(--font-geist-sans), sans-serif',
+          }}
+        >
+          Before Minh Lose His Freedom
+        </p>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 px-2 mb-12">
+          {weddingImages.map((imageUrl, i) => (
+            <div
+              key={imageUrl}
+              className="relative aspect-[4/5] overflow-hidden rounded-sm bg-neutral-100 dark:bg-neutral-900"
+              style={{
+                rotate: rotations[i % rotations.length],
+              }}
+            >
+              <Image
+                src={imageUrl}
+                alt={`Wedding memory ${i + 1}`}
+                fill
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                sizes="(max-width: 768px) 50vw, 33vw"
+              />
+              {/* Subtle overlay on hover */}
+              <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-500" />
+            </div>
+          ))}
+        </div>
+
+        {/* Wedding Images Gallery */}
+        {/* {weddingImages.length > 0 && (
+            <>
+              <p
+                className="wedding-fade-up text-center text-xs uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500 mb-8 mt-16"
+                style={{ animationDelay: '1.3s', fontFamily: 'var(--font-geist-sans), sans-serif' }}
+              >
+                Our Journey Together
+              </p>
+              <MasonryGallery images={weddingImages} />
+            </>
+          )} */}
+      </div>
+
+      {/* Bottom section */}
+      <div
+        className="wedding-fade-up text-center py-16"
+        style={{ animationDelay: '1.6s' }}
+      >
+        {/* <div className="flex justify-center items-center gap-3 mb-8">
             <span className="wedding-dot inline-block w-1.5 h-1.5 rounded-full bg-neutral-400 dark:bg-neutral-500" style={{ animationDelay: '0s' }} />
             <span className="wedding-dot inline-block w-1.5 h-1.5 rounded-full bg-neutral-400 dark:bg-neutral-500" style={{ animationDelay: '0.3s' }} />
             <span className="wedding-dot inline-block w-1.5 h-1.5 rounded-full bg-neutral-400 dark:bg-neutral-500" style={{ animationDelay: '0.6s' }} />
           </div> */}
 
-          <p
-            className="text-lg italic text-neutral-600 dark:text-neutral-300 mb-2"
-          >
-            Stay tuned
-          </p>
-          <p
-            className="text-xs uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-600"
-            style={{ fontFamily: 'var(--font-geist-sans), sans-serif' }}
-          >
-            More details coming soon
-          </p>
+        <div className="max-w-2xl mx-auto px-4">
+          {/* Venue */}
+          <div className="mb-8">
+            <p
+              className="text-sm uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500 mb-4"
+              style={{ fontFamily: 'var(--font-geist-sans), sans-serif' }}
+            >
+              Venue
+            </p>
+            <p className="text-xl md:text-2xl font-semibold mb-3">
+              Star Palace Sen Tay Ho
+            </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
+              614 Lac Long Quan, Tay Ho Ward
+              <br />
+              Hanoi, Vietnam
+            </p>
 
-          {/* Decorative bottom flourish */}
-          <div
-            className="wedding-breathe text-neutral-300 dark:text-neutral-700 text-2xl tracking-[0.5em] mt-12"
-            style={{ animationDelay: '2s' }}
-          >
-            ~ ~ ~
+            {/* Map Link */}
+            <a
+              href="https://maps.app.goo.gl/e5dGFAaTxWWGyRnA6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 text-sm uppercase tracking-[0.2em] text-neutral-700 dark:text-neutral-300 border border-neutral-300 dark:border-neutral-700 rounded-sm hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors duration-300"
+              style={{ fontFamily: 'var(--font-geist-sans), sans-serif' }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              View on Map
+            </a>
           </div>
         </div>
-      </section>
-    </>
+
+        {/* Decorative bottom flourish */}
+        <div
+          className="wedding-breathe text-neutral-300 dark:text-neutral-700 text-2xl tracking-[0.5em] mt-12"
+          style={{ animationDelay: '2s' }}
+        >
+          ~ ~ ~
+        </div>
+      </div>
+    </section>
   );
 }
