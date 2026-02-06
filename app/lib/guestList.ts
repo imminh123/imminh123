@@ -24,7 +24,7 @@ export const guestList: Record<string, Guest> = {
   },
   'r2h7': {
     name: 'Hugo',
-    greeting: 'My French darling'
+    greeting: 'My French Darling'
   },
   't1l9': {
     name: 'Aitor & Roger',
