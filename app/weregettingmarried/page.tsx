@@ -61,7 +61,7 @@ export default async function WereGettingMarried() {
             fontFamily: 'var(--font-geist-sans), sans-serif',
           }}
         >
-          Having you with us on this special day is our greatest gift.
+          Thank you for being part of my beautiful journey. Having you with us on this special day is our greatest gift.
           <br />
         </p>
 
@@ -91,7 +91,7 @@ export default async function WereGettingMarried() {
             fontFamily: 'var(--font-geist-sans), sans-serif',
           }}
         >
-          Before Minh Lose His Freedom
+          Before Minh Loses His Freedom
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 px-2 mb-12">
