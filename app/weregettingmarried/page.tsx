@@ -61,7 +61,9 @@ export default async function WereGettingMarried() {
             fontFamily: 'var(--font-geist-sans), sans-serif',
           }}
         >
-          Thank you for being part of my beautiful journey. Having you with us on this special day is our greatest gift.
+          Hei, I just wanna say thank you for being part of my beautiful journey. Having you with us on this special day is truly the greatest gift we could ask for. We know that to be here meant long flights, packed suitcases, and time taken away from your own lives, and that makes your presence even more meaningful to us.
+
+          From the bottom of my heart, I hope you are happy, and that you have found love or that love finds you, again and again.
           <br />
         </p>
 
