@@ -44,7 +44,7 @@ export function PersonalizedGreeting() {
         className="wedding-fade-up text-lg md:text-xl text-neutral-600 dark:text-neutral-400 font-serif italic"
         style={{ animationDelay: '0.2s' }}
       >
-        Dear {guest.name},
+        To {guest.name},
       </p>
       {guest.greeting && (
         <p
