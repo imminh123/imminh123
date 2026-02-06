@@ -54,18 +54,29 @@ export default async function WereGettingMarried() {
           <div className="wedding-line h-px w-24 bg-neutral-300 dark:bg-neutral-700" />
         </div>
 
-        <p
-          className="wedding-fade-up text-sm text-neutral-500 dark:text-neutral-400 max-w-xs mx-auto leading-relaxed"
+        <div
+          className="wedding-fade-up text-sm text-neutral-500 dark:text-neutral-400 max-w-xs mx-auto leading-relaxed space-y-4 text-left"
           style={{
             animationDelay: '0.8s',
             fontFamily: 'var(--font-geist-sans), sans-serif',
           }}
         >
-          Hei, I just wanna say thank you for being part of my beautiful journey. Having you with us on this special day is truly the greatest gift we could ask for. We know that to be here meant long flights, packed suitcases, and time taken away from your own lives, and that makes your presence even more meaningful to us.
-
-          From the bottom of my heart, I hope you are happy, and that you have found love or that love finds you, again and again.
-          <br />
-        </p>
+          <p>
+            Hei, I just wanna say thank you for being part of my beautiful journey.
+            Having you with us on this special day is truly the greatest gift we could ask for.
+          </p>
+          <p>
+            We know that to be here meant long flights, packed suitcases, and time taken
+            away from your own lives, and that makes your presence even more meaningful to us.
+          </p>
+          <p>
+            From the bottom of my heart, I hope you are happy, and that you have found
+            love or that love finds you, again and again.
+          </p>
+          <p className="mt-6 text-right italic">
+            Minh & Rosie
+          </p>
+        </div>
 
         {/* Save the Date */}
         <div className="mt-12">
