@@ -40,6 +40,14 @@ export const guestList: Record<string, Guest> = {
   },
   'd8f6': {
     name: 'Dhruv & Gabriela',
+  },
+  'z4i5': {
+    name: 'Kim',
+    greeting: 'My Dear Habibi'
+  },
+  'a0z9': {
+    name: 'Hammad',
+    greeting: 'My True Habibi'
   }
   // Add more guests as needed
   // Format: 'shortid': { name: 'Name', greeting: 'Optional custom message' }
