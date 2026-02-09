@@ -39,7 +39,7 @@ export const guestList: Record<string, Guest> = {
     greeting: 'My biggest disappointment, and my dearest friend'
   },
   'd8f6': {
-    name: 'Dhruv & Gabriela',
+    name: 'Dhruv & Daniela',
   },
   'z4i5': {
     name: 'Kim',
