@@ -15,10 +15,6 @@ function getInstructions(app: string | null) {
   switch (app) {
     case 'Zalo':
       return 'Nhấn vào menu ⋯ ở góc phải bên trên và chọn "Mở bằng Safari"';
-    case 'Facebook':
-      return 'Nhấn vào menu ⋯ ở góc phải bên dưới và chọn "Mở trong Safari"\nTap the ⋯ menu at the bottom right and select "Open in Safari"';
-    case 'Instagram':
-      return 'Nhấn vào menu ⋯ ở góc phải bên trên và chọn "Mở trong Safari"\nTap the ⋯ menu at the top right and select "Open in Safari"';
     default:
       return 'Nhấn vào menu ⋯ và chọn "Mở trong Safari" hoặc "Mở trong trình duyệt"\nTap the ⋯ menu and select "Open in Safari" or "Open in browser"';
   }
@@ -42,7 +38,7 @@ export function WebviewCheckModal() {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
       <div className="mx-4 max-w-sm rounded-lg bg-white p-6 text-center shadow-xl dark:bg-neutral-900">
         <p className="mb-1 text-base font-medium text-neutral-800 dark:text-neutral-200">
-          For the best experience, please open this page in Safari / Để có trải nghiệm tốt nhất, vui lòng mở trang này trong Safari
+          Để có trải nghiệm tốt nhất, vui lòng mở trang này trong Safari / For the best experience, please open this page in Safari 
         </p>
         <hr className='my-2' />
         {/* <button
