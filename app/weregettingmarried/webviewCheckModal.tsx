@@ -14,7 +14,7 @@ function getAppName(ua: string) {
 function getInstructions(app: string | null) {
   switch (app) {
     case 'Zalo':
-      return 'Nhấn vào menu ⋯ ở góc phải bên dưới và chọn "Mở trong trình duyệt"\nTap the ⋯ menu at the bottom right and select "Open in browser"';
+      return 'Nhấn vào menu ⋯ ở góc phải bên trên và chọn "Mở bằng Safari"';
     case 'Facebook':
       return 'Nhấn vào menu ⋯ ở góc phải bên dưới và chọn "Mở trong Safari"\nTap the ⋯ menu at the bottom right and select "Open in Safari"';
     case 'Instagram':
