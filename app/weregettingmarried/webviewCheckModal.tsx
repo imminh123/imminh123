@@ -27,7 +27,7 @@ export function WebviewCheckModal() {
 
   useEffect(() => {
     const ua = navigator.userAgent || '';
-    const inApp = /Zalo|FBAN|FBAV|Instagram|Line|MicroMessenger|Snapchat|Twitter|LinkedInApp/i.test(ua);
+    const inApp = /Zalo/i.test(ua);
     setIsInAppBrowser(inApp);
     if (inApp) setAppName(getAppName(ua));
   }, []);
