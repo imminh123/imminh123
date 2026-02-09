@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { fetchWeddingImages } from '../lib/fetchImages';
 import { PersonalizedGreeting } from '../components/PersonalizedGreeting';
+import { WebviewCheckModal } from './webviewCheckModal';
 import './wedding.css';
 
 const rotations = ['-3deg', '2deg', '-1.5deg', '3deg', '-2deg', '1.5deg'];
@@ -10,6 +11,8 @@ export default async function WereGettingMarried() {
 
   return (
     <section className="wedding-page -mx-2 md:mx-0">
+      <WebviewCheckModal />
+
       {/* Background Video */}
       <video className="hero-video-bg" autoPlay loop muted playsInline>
         <source
@@ -62,20 +65,20 @@ export default async function WereGettingMarried() {
           }}
         >
           <p>
-            Hei, I just wanna say thank you for being part of my beautiful journey.
-            Having you with us on this special day is truly the greatest gift we could ask for.
+            Hei, I just wanna say thank you for being part of my beautiful
+            journey. Having you with us on this special day is truly the
+            greatest gift we could ask for.
           </p>
           <p>
-            We know that to be here meant long flights, packed suitcases, and time taken
-            away from your own lives, and that makes your presence even more meaningful to us.
+            We know that to be here meant long flights, packed suitcases, and
+            time taken away from your own lives, and that makes your presence
+            even more meaningful to us.
           </p>
           <p>
-            From the bottom of my heart, I hope you are happy, and that you have found
-            love or that love finds you, again and again.
+            From the bottom of my heart, I hope you are happy, and that you have
+            found love or that love finds you, again and again.
           </p>
-          <p className="mt-6 text-right italic">
-            Minh & Rosie
-          </p>
+          <p className="mt-6 text-right italic">Minh & Rosie</p>
         </div>
 
         {/* Save the Date */}
