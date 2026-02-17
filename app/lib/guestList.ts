@@ -64,6 +64,10 @@ export const guestList: Record<string, Guest> = {
   'hh2k': {
     name: 'Hao',
     greeting: 'A smiley soul that carries sunlight through the Nordic winter'
+  },
+  'an00': {
+    name: "Anoop & Your Loved One",
+    // greeting: 'A mysterious duo'
   }
   // Add more guests as needed
   // Format: 'shortid': { name: 'Name', greeting: 'Optional custom message' }
