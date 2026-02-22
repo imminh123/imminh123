@@ -11,7 +11,7 @@ export function generateMetadata(): Metadata {
   const title = "We're Getting Married — Minh & Rosie";
   const description =
     'A little surprise for you. Save the date: March 6, 2026.';
-  const ogImage = 'https://d12g7i3vymjmyt.cloudfront.net/000004460008.JPG';
+  const ogImage = 'https://d12g7i3vymjmyt.cloudfront.net/others/thumbnail.jpg';
 
   return {
     title,
@@ -20,7 +20,7 @@ export function generateMetadata(): Metadata {
       title,
       description,
       type: 'website',
-      url: 'https://d12g7i3vymjmyt.cloudfront.net/000004460008.JPG',
+      url: 'https://d12g7i3vymjmyt.cloudfront.net/others/thumbnail.jpg',
       images: [
         {
           url: ogImage,
