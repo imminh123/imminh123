@@ -111,7 +111,7 @@ export default async function WereGettingMarried() {
             From the bottom of my heart, I hope you are happy, and that you have
             found love or that love finds you, again and again.
           </p>
-          <p className="mt-6 text-right italic">Minh & Rosie</p>
+          <p className="mt-6 text-right italic">Minh & Hue</p>
         </div>
 
         {/* Save the Date */}
