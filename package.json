@@ -24,6 +24,8 @@
     "@vercel/speed-insights": "^1.0.9",
     "aws-sdk": "^2.1692.0",
     "axios": "^1.7.4",
+    "baseline-browser-mapping": "^2.10.0",
+    "caniuse-lite": "^1.0.30001772",
     "dotenv": "^16.4.2",
     "framer-motion": "^12.11.0",
     "geist": "1.2.2",

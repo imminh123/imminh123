@@ -8,7 +8,7 @@ import './wedding.css';
 const rotations = ['-3deg', '2deg', '-1.5deg', '3deg', '-2deg', '1.5deg'];
 
 export function generateMetadata(): Metadata {
-  const title = "We're Getting Married — Minh & Rosie";
+  const title = "We're Getting Married — Minh & Hue";
   const description =
     'A little surprise for you. Save the date: March 6, 2026.';
   const ogImage = 'https://d12g7i3vymjmyt.cloudfront.net/others/thumbnail.jpg';
@@ -37,7 +37,10 @@ export function generateMetadata(): Metadata {
 }
 
 export default async function WereGettingMarried() {
-  const weddingImages = await fetchWeddingImages();
+  const [weddingImages, travelImages] = await Promise.all([
+    fetchWeddingImages(),
+    fetchWeddingImages('travel'),
+  ]);
 
   return (
     <section className="wedding-page -mx-2 md:mx-0">
@@ -231,6 +234,39 @@ export default async function WereGettingMarried() {
             </a>
           </div>
         </div>
+
+        {/* Travel Photos */}
+        {travelImages.length > 0 && (
+          <div className="py-8">
+            <p
+              className="text-center text-xs uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500 mb-8"
+              style={{ fontFamily: 'var(--font-geist-sans), sans-serif' }}
+            >
+              Our Adventures Together
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 px-2">
+              {travelImages.map((imageUrl, i) => (
+                <div
+                  key={imageUrl}
+                  className="relative aspect-[4/5] overflow-hidden rounded-sm bg-neutral-100 dark:bg-neutral-900"
+                  style={{
+                    rotate: rotations[i % rotations.length],
+                  }}
+                >
+                  <Image
+                    src={imageUrl}
+                    alt={`Travel memory ${i + 1}`}
+                    fill
+                    className="object-cover transition-transform duration-700 hover:scale-105"
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-500" />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Decorative bottom flourish */}
         <div

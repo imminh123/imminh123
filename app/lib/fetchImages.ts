@@ -44,9 +44,10 @@ export async function fetchImageUrls(): Promise<Record<string, string[]>> {
   return groupedSorted;
 }
 
-export async function fetchWeddingImages(): Promise<string[]> {
+export async function fetchWeddingImages(directory?: string): Promise<string[]> {
   const Bucket = 'wedding-media-invitation';
-  const data = await s3.listObjectsV2({ Bucket }).promise();
+  const Prefix = directory ? `${directory}/` : undefined;
+  const data = await s3.listObjectsV2({ Bucket, ...(Prefix && { Prefix }) }).promise();
 
   const images: { url: string; lastModified: Date }[] = [];
 
@@ -57,6 +58,9 @@ export async function fetchWeddingImages(): Promise<string[]> {
 
     // Skip empty files, folders, and non-image files
     if (size === 0 || !lastModified) return;
+
+    // When no directory specified, skip subfolder files
+    if (!directory && key.includes('/')) return;
 
     // Only include common image formats
     const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.heic'];
