@@ -2,9 +2,39 @@ import Image from 'next/image';
 import { fetchWeddingImages } from '../lib/fetchImages';
 import { PersonalizedGreeting } from '../components/PersonalizedGreeting';
 import { WebviewCheckModal } from './webviewCheckModal';
+import type { Metadata } from 'next';
 import './wedding.css';
 
 const rotations = ['-3deg', '2deg', '-1.5deg', '3deg', '-2deg', '1.5deg'];
+
+export function generateMetadata(): Metadata {
+  const title = "We're Getting Married — Minh & Rosie";
+  const description =
+    'A little surprise for you. Save the date: March 6, 2026.';
+  const ogImage = 'https://d12g7i3vymjmyt.cloudfront.net/000004460008.JPG';
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      url: 'https://d12g7i3vymjmyt.cloudfront.net/000004460008.JPG',
+      images: [
+        {
+          url: ogImage,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
+    },
+  };
+}
 
 export default async function WereGettingMarried() {
   const weddingImages = await fetchWeddingImages();
