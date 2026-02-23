@@ -24,7 +24,7 @@ const navItems = {
   },
 };
 
-const hiddenOnRoutes = ['/weregettingmarried'];
+const hiddenOnRoutes = ['/weregettingmarried', '/weregettingmarried/bride'];
 
 export function Navbar() {
   const pathname = usePathname();
