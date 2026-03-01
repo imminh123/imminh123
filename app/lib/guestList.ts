@@ -80,6 +80,9 @@ export const guestList: Record<string, Guest> = {
     name: 'Tatu',
     greeting: 'To a true jazz soul and the coolest boss around'
   },
+  'ttdl': {
+    name: 'Thảo',
+  },
   // Add more guests as needed
   // Format: 'shortid': { name: 'Name', greeting: 'Optional custom message' }
 };
