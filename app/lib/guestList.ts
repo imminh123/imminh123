@@ -86,6 +86,10 @@ export const guestList: Record<string, Guest> = {
   'kk12': {
     name: 'Khanh',
   },
+  'dmche': {
+    name: 'Chế and your loved one',
+    greeting: 'Phát cơm chó vừa thôi mày coi chừng tao'
+  }
   // Add more guests as needed
   // Format: 'shortid': { name: 'Name', greeting: 'Optional custom message' }
 };
