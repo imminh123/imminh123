@@ -61,7 +61,7 @@ export default async function WereGettingMarried() {
       >
         {/* Decorative top flourish */}
         <div
-          className="wedding-breathe text-neutral-300 dark:text-neutral-700 text-2xl tracking-[0.5em] mb-8"
+          className="wedding-breathe text-neutral-700 text-2xl tracking-[0.5em] mb-8"
           style={{ fontVariantLigatures: 'common-ligatures' }}
         >
           ~ ~ ~
@@ -70,7 +70,7 @@ export default async function WereGettingMarried() {
         <PersonalizedGreeting />
 
         {/* <p
-            className="wedding-fade-up text-xs uppercase tracking-[0.4em] text-neutral-400 dark:text-neutral-500 mb-6"
+            className="wedding-fade-up text-xs uppercase tracking-[0.4em] text-neutral-500 mb-6"
             style={{ animationDelay: '0.3s', fontFamily: 'var(--font-geist-sans), sans-serif' }}
           >
             Something beautiful is coming
@@ -87,11 +87,11 @@ export default async function WereGettingMarried() {
 
         {/* Decorative line */}
         <div className="flex justify-center my-8">
-          <div className="wedding-line h-px w-24 bg-neutral-300 dark:bg-neutral-700" />
+          <div className="wedding-line h-px w-24 bg-neutral-700" />
         </div>
 
         <div
-          className="wedding-fade-up text-sm text-neutral-500 dark:text-neutral-400 max-w-xs mx-auto leading-relaxed space-y-4 text-left"
+          className="wedding-fade-up text-sm text-neutral-400 max-w-xs mx-auto leading-relaxed space-y-4 text-left"
           style={{
             animationDelay: '0.8s',
             fontFamily: 'var(--font-geist-sans), sans-serif',
@@ -117,7 +117,7 @@ export default async function WereGettingMarried() {
         {/* Save the Date */}
         <div className="mt-12">
           <p
-            className="text-sm uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500 mb-4"
+            className="text-sm uppercase tracking-[0.3em] text-neutral-500 mb-4"
             style={{ fontFamily: 'var(--font-geist-sans), sans-serif' }}
           >
             Save the Date
@@ -125,7 +125,7 @@ export default async function WereGettingMarried() {
           <p className="text-2xl md:text-3xl font-semibold mb-2">
             Friday, March 6, 2026
           </p>
-          <p className="text-lg text-neutral-600 dark:text-neutral-400">
+          <p className="text-lg text-neutral-400">
             6:00 PM
           </p>
         </div>
@@ -134,7 +134,7 @@ export default async function WereGettingMarried() {
       {/* Photo Collage */}
       <div className="py-8">
         <p
-          className="wedding-fade-up text-center text-xs uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500 mb-8"
+          className="wedding-fade-up text-center text-xs uppercase tracking-[0.3em] text-neutral-500 mb-8"
           style={{
             animationDelay: '1s',
             fontFamily: 'var(--font-geist-sans), sans-serif',
@@ -147,7 +147,7 @@ export default async function WereGettingMarried() {
           {weddingImages.map((imageUrl, i) => (
             <div
               key={imageUrl}
-              className="relative aspect-[4/5] overflow-hidden rounded-sm bg-neutral-100 dark:bg-neutral-900"
+              className="relative aspect-[4/5] overflow-hidden rounded-sm bg-neutral-900"
               style={{
                 rotate: rotations[i % rotations.length],
               }}
@@ -169,7 +169,7 @@ export default async function WereGettingMarried() {
         {/* {weddingImages.length > 0 && (
             <>
               <p
-                className="wedding-fade-up text-center text-xs uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500 mb-8 mt-16"
+                className="wedding-fade-up text-center text-xs uppercase tracking-[0.3em] text-neutral-500 mb-8 mt-16"
                 style={{ animationDelay: '1.3s', fontFamily: 'var(--font-geist-sans), sans-serif' }}
               >
                 Our Journey Together
@@ -194,7 +194,7 @@ export default async function WereGettingMarried() {
           {/* Venue */}
           <div className="mb-8">
             <p
-              className="text-sm uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500 mb-4"
+              className="text-sm uppercase tracking-[0.3em] text-neutral-500 mb-4"
               style={{ fontFamily: 'var(--font-geist-sans), sans-serif' }}
             >
               Venue
@@ -202,7 +202,7 @@ export default async function WereGettingMarried() {
             <p className="text-xl md:text-2xl font-semibold mb-3">
               Star Palace Sen Tay Ho
             </p>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
+            <p className="text-sm text-neutral-400 leading-relaxed mb-6">
               614 Lac Long Quan, Tay Ho Ward
               <br />
               Hanoi, Vietnam
@@ -213,7 +213,7 @@ export default async function WereGettingMarried() {
               href="https://maps.app.goo.gl/e5dGFAaTxWWGyRnA6"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm uppercase tracking-[0.2em] text-neutral-700 dark:text-neutral-300 border border-neutral-300 dark:border-neutral-700 rounded-sm hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 text-sm uppercase tracking-[0.2em] text-neutral-300 border border-neutral-700 rounded-sm hover:bg-neutral-900 transition-colors duration-300"
               style={{ fontFamily: 'var(--font-geist-sans), sans-serif' }}
             >
               <svg
@@ -239,7 +239,7 @@ export default async function WereGettingMarried() {
         {travelImages.length > 0 && (
           <div className="py-8">
             <p
-              className="text-center text-xs uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500 mb-8"
+              className="text-center text-xs uppercase tracking-[0.3em] text-neutral-500 mb-8"
               style={{ fontFamily: 'var(--font-geist-sans), sans-serif' }}
             >
               Our Adventures Together
@@ -249,7 +249,7 @@ export default async function WereGettingMarried() {
               {travelImages.map((imageUrl, i) => (
                 <div
                   key={imageUrl}
-                  className="relative aspect-[4/5] overflow-hidden rounded-sm bg-neutral-100 dark:bg-neutral-900"
+                  className="relative aspect-[4/5] overflow-hidden rounded-sm bg-neutral-900"
                   style={{
                     rotate: rotations[i % rotations.length],
                   }}
@@ -270,7 +270,7 @@ export default async function WereGettingMarried() {
 
         {/* Decorative bottom flourish */}
         <div
-          className="wedding-breathe text-neutral-300 dark:text-neutral-700 text-2xl tracking-[0.5em] mt-12"
+          className="wedding-breathe text-neutral-700 text-2xl tracking-[0.5em] mt-12"
           style={{ animationDelay: '2s' }}
         >
           ~ ~ ~

@@ -66,6 +66,12 @@
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
 }
 
+/* Force dark appearance regardless of system color scheme */
+html:has(.wedding-page) {
+  background-color: #111010;
+  color: white;
+}
+
 .hero-video-bg {
   position: fixed;
   top: 0;

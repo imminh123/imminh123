@@ -41,14 +41,14 @@ export function PersonalizedGreeting() {
   return (
     <div className="mb-6">
       <p
-        className="wedding-fade-up text-lg md:text-xl text-neutral-600 dark:text-neutral-400 font-serif italic"
+        className="wedding-fade-up text-lg md:text-xl text-neutral-400 font-serif italic"
         style={{ animationDelay: '0.2s' }}
       >
         To {guest.name},
       </p>
       {guest.greeting && (
         <p
-          className="wedding-fade-up text-sm md:text-base text-neutral-500 dark:text-neutral-400 mt-3 max-w-md mx-auto"
+          className="wedding-fade-up text-sm md:text-base text-neutral-400 mt-3 max-w-md mx-auto"
           style={{ animationDelay: '0.3s', fontFamily: 'var(--font-geist-sans), sans-serif' }}
         >
           {guest.greeting}
