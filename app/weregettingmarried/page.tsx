@@ -149,7 +149,7 @@ export default async function WereGettingMarried() {
               key={imageUrl}
               className="relative aspect-[4/5] overflow-hidden rounded-sm bg-neutral-900"
               style={{
-                rotate: rotations[i % rotations.length],
+                transform: `rotate(${rotations[i % rotations.length]})`,
               }}
             >
               <Image
@@ -251,7 +251,7 @@ export default async function WereGettingMarried() {
                   key={imageUrl}
                   className="relative aspect-[4/5] overflow-hidden rounded-sm bg-neutral-900"
                   style={{
-                    rotate: rotations[i % rotations.length],
+                    transform: `rotate(${rotations[i % rotations.length]})`,
                   }}
                 >
                   <Image
