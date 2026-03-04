@@ -154,10 +154,8 @@ export default async function WereGettingMarried() {
                 <Image
                   src={imageUrl}
                   alt={`Wedding memory ${i + 1}`}
-                  width={400}
-                  height={500}
                   unoptimized
-                  priority={i < 6}
+                  fill
                   className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
                 />
                 {/* Subtle overlay on hover */}
