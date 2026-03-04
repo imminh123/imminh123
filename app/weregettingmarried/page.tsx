@@ -156,9 +156,9 @@ export default async function WereGettingMarried() {
                   alt={`Wedding memory ${i + 1}`}
                   width={400}
                   height={500}
+                  unoptimized
                   priority={i < 6}
                   className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
-                  sizes="(max-width: 768px) 50vw, 33vw"
                 />
                 {/* Subtle overlay on hover */}
                 <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-500" />
@@ -259,9 +259,9 @@ export default async function WereGettingMarried() {
                       alt={`Travel memory ${i + 1}`}
                       width={400}
                       height={500}
+                      unoptimized
                       priority={i < 6}
                       className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
-                      sizes="(max-width: 768px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-500" />
                   </div>
