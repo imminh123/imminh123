@@ -147,21 +147,20 @@ export default async function WereGettingMarried() {
           {weddingImages.map((imageUrl, i) => (
             <div
               key={imageUrl}
-              className="relative aspect-[4/5] overflow-hidden rounded-sm bg-neutral-900"
-              style={{
-                transform: `rotate(${rotations[i % rotations.length]})`,
-              }}
+              style={{ transform: `rotate(${rotations[i % rotations.length]})` }}
             >
-              <Image
-                src={imageUrl}
-                alt={`Wedding memory ${i + 1}`}
-                fill
-                loading="eager"
-                className="object-cover transition-transform duration-700 hover:scale-105"
-                sizes="(max-width: 768px) 50vw, 33vw"
-              />
-              {/* Subtle overlay on hover */}
-              <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-500" />
+              <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-neutral-900">
+                <Image
+                  src={imageUrl}
+                  alt={`Wedding memory ${i + 1}`}
+                  fill
+                  loading="eager"
+                  className="object-cover transition-transform duration-700 hover:scale-105"
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                />
+                {/* Subtle overlay on hover */}
+                <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-500" />
+              </div>
             </div>
           ))}
         </div>
@@ -250,20 +249,19 @@ export default async function WereGettingMarried() {
               {travelImages.map((imageUrl, i) => (
                 <div
                   key={imageUrl}
-                  className="relative aspect-[4/5] overflow-hidden rounded-sm bg-neutral-900"
-                  style={{
-                    transform: `rotate(${rotations[i % rotations.length]})`,
-                  }}
+                  style={{ transform: `rotate(${rotations[i % rotations.length]})` }}
                 >
-                  <Image
-                    src={imageUrl}
-                    alt={`Travel memory ${i + 1}`}
-                    fill
-                    loading="eager"
-                    className="object-cover transition-transform duration-700 hover:scale-105"
-                    sizes="(max-width: 768px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-500" />
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-neutral-900">
+                    <Image
+                      src={imageUrl}
+                      alt={`Travel memory ${i + 1}`}
+                      fill
+                      loading="eager"
+                      className="object-cover transition-transform duration-700 hover:scale-105"
+                      sizes="(max-width: 768px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-500" />
+                  </div>
                 </div>
               ))}
             </div>
