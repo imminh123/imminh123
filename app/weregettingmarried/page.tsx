@@ -155,7 +155,7 @@ export default async function WereGettingMarried() {
                   src={imageUrl}
                   alt={`Wedding memory ${i + 1}`}
                   fill
-                  loading="eager"
+                  priority={i < 6}
                   className="object-cover transition-transform duration-700 hover:scale-105"
                   sizes="(max-width: 768px) 50vw, 33vw"
                 />
@@ -257,7 +257,7 @@ export default async function WereGettingMarried() {
                       src={imageUrl}
                       alt={`Travel memory ${i + 1}`}
                       fill
-                      loading="eager"
+                      priority={i < 6}
                       className="object-cover transition-transform duration-700 hover:scale-105"
                       sizes="(max-width: 768px) 50vw, 33vw"
                     />
