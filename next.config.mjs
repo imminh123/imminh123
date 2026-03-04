@@ -36,10 +36,15 @@ const nextConfig = {
   //   ];
   // },
   images: {
+    domains: ['d12g7i3vymjmyt.cloudfront.net'],
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "*"
+        protocol: 'https',
+        hostname: '*',
+      },
+      {
+        protocol: 'https',
+        hostname: 'd12g7i3vymjmyt.cloudfront.net',
       },
     ],
   },

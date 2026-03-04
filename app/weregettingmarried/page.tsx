@@ -147,6 +147,7 @@ export default async function WereGettingMarried() {
           {weddingImages.map((imageUrl, i) => (
             <div
               key={imageUrl}
+              className="relative"
               style={{ transform: `rotate(${rotations[i % rotations.length]})` }}
             >
               <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-neutral-900">
