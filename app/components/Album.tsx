@@ -79,13 +79,13 @@ export default function AlbumGallery({
     <div>
       {/* Album Tabs: horizontal-scroll on mobile, static on desktop */}
       <TabGroup>
-        <TabList className="flex space-x-3 overflow-x-auto md:overflow-x-visible md:justify-start">
+        <TabList className="flex flex-wrap gap-1">
           {albumNames.map((name) => (
             <Tab
               key={name}
               className={({ selected }) =>
                 classNames(
-                  'text-sm md:text-base px-3 py-2 whitespace-nowrap capitalize outline-none focus:ring-0 focus:outline-none',
+                  'text-sm md:text-base px-3 py-2 capitalize outline-none focus:ring-0 focus:outline-none',
                   selected ? 'text-white' : 'text-gray-400 hover:text-white'
                 )
               }

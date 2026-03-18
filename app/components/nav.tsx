@@ -18,10 +18,7 @@ const navItems = {
   },
   '/running': {
     name: 'running',
-  },
-  '/weregettingmarried': {
-    name: "we're getting married",
-  },
+  }
 };
 
 const hiddenOnRoutes = ['/weregettingmarried', '/weregettingmarried/bride'];

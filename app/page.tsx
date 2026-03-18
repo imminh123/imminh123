@@ -1,7 +1,6 @@
 'use client';
 
 import { Suspense } from 'react';
-import { unstable_noStore as noStore } from 'next/cache';
 import Image from 'next/image';
 import aalto_logo from 'public/Aalto_University_logo.png';
 import kth_logo from 'public/kth-logo.png';
@@ -13,9 +12,7 @@ import startup from 'public/images/home/startup.jpg';
 
 import avatar from 'public/images/home/avatar.png';
 import avatar_github from 'public/images/home/avatar_github.jpg';
-import ViewCounter from 'app/blog/view-counter';
 import { PreloadResources } from 'app/preload';
-import { getViewsCount } from 'app/db/queries';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faGithub,
@@ -163,10 +160,6 @@ function BlogLink({ slug, name }) {
   );
 }
 
-async function Views({ slug }: { slug: string }) {
-  let views = await getViewsCount();
-  return <ViewCounter allViews={views} slug={slug} />;
-}
 const query = gql`
   query {
     user(login: "imminh123") {
@@ -204,8 +197,50 @@ export default function Page() {
         <p>🇻🇳 🇫🇮 🇸🇪</p>
       </h1>
 
+      <div className="mb-6 rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 dark:border-neutral-800 dark:bg-neutral-900">
+        <p className="text-xs text-neutral-400 dark:text-neutral-500 mb-1 flex items-center gap-1.5">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+          </span>
+          Life update · March 2026
+        </p>
+
+        <ul className="text-sm text-neutral-600 dark:text-neutral-400 space-y-1 list-none">
+          <li>
+            → Heiiii I got married, it was magical, curious?{' '}
+            <a
+              className="underline-offset-2 underline"
+              href="https://photos.app.goo.gl/SXa2HJQYswN6pg5fA"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {' '}
+              Check it out here
+            </a>
+            .
+          </li>
+          <li>
+            → Well,{' '}
+            <a
+              className="underline-offset-2 underline"
+              href="https://photos.app.goo.gl/CVeSLqQob3q9YEZV6"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {' '}
+              I broke my legs
+            </a>
+            . Looks like I won’t be back on the track for a while.
+          </li>
+          <li>
+            → Man, this Gen AI madness made me seriously rethink my next steps. Should I just take a gap? Idk, I’ll figure it out, hope to return to this note with more clarity soon.
+          </li>
+        </ul>
+      </div>
+
       <p className="prose prose-neutral dark:prose-invert">
-        {`I'm a software engineer, an optimist, and a lifelong learner. I currently pursuit a Master in Cloud Infrastructure and Entrepreneurship at `}
+        {`I'm a software engineer, a runner, an optimist, and a lifelong learner. Graduated from `}
         <span className="not-prose">
           <Badge href="https://www.aalto.fi/en">
             <Image
@@ -233,7 +268,8 @@ export default function Page() {
             KTH
           </Badge>
         </span>
-        {` University`}.
+        {` University`}, after 5 years in tech, I’m back on the startup grind
+        (again).
       </p>
 
       <p className="prose prose-neutral dark:prose-invert mt-3">
