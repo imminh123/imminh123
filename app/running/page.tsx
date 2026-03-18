@@ -168,6 +168,7 @@ export default function RunningPage() {
               {selectedRun.video && (
                 <div className="mb-6">
                   <video
+                    key={selectedRun.video}
                     controls
                     className="w-full rounded-lg"
                     preload="metadata"
